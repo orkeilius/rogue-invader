@@ -7,16 +7,19 @@
 size = Vector2(33.3333, 24.4444)
 
 [node name="Alien" type="Node2D"]
+
 scale = Vector2(0.9, 0.9)
 script = ExtResource("1_k2eh6")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 position = Vector2(7.62939e-06, 1.90735e-06)
+
 scale = Vector2(2.95455, 2.95455)
 sprite_frames = ExtResource("2_5p6p8")
 autoplay = "default"
 speed_scale = 0.25
+
 metadata/_edit_lock_ = true
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -25,4 +28,5 @@ metadata/_edit_lock_ = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0, -3.33333)
 shape = SubResource("RectangleShape2D_j35gv")
+debug_color = Color(0, 0.6, 0.701961, 0.419608)
 metadata/_edit_lock_ = true

@@ -1,0 +1,25 @@
+[gd_resource type="SpriteFrames" load_steps=4 format=3 uid="uid://ctkfrr06a17od"]
+
+[ext_resource type="Texture2D" uid="uid://dk5v30mburc5r" path="res://sprite/alien/base1.png" id="1_ec6wa"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iaj80"]
+atlas = ExtResource("1_ec6wa")
+region = Rect2(0, 0, 11, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4lbfb"]
+atlas = ExtResource("1_ec6wa")
+region = Rect2(11, 0, 11, 12)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iaj80")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4lbfb")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
