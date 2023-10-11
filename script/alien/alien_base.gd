@@ -5,8 +5,6 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	print('res://sprite/alien/base{variante}.tres'
-		.format({"variante":sprite_variante}))
 	_AnimatedSprite2D.sprite_frames = load(
 		'res://sprite/alien/base{variante}.tres'
 		.format({"variante":sprite_variante})
