@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://c10pg8ldphbi7"]
+
+[ext_resource type="Script" path="res://script/alien/alien_base.gd" id="1_k2eh6"]
+[ext_resource type="SpriteFrames" uid="uid://ctkfrr06a17od" path="res://sprite/alien/base1.tres" id="2_5p6p8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j35gv"]
+size = Vector2(33.3333, 24.4444)
+
+[node name="Alien" type="Node2D"]
+scale = Vector2(0.9, 0.9)
+script = ExtResource("1_k2eh6")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(7.62939e-06, 1.90735e-06)
+scale = Vector2(2.95455, 2.95455)
+sprite_frames = ExtResource("2_5p6p8")
+autoplay = "default"
+speed_scale = 0.25
+metadata/_edit_lock_ = true
+
+[node name="Area2D" type="Area2D" parent="."]
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -3.33333)
+shape = SubResource("RectangleShape2D_j35gv")
+metadata/_edit_lock_ = true
