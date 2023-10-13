@@ -2,7 +2,7 @@ extends Node2D
 
 @export var speed : float = 30
 @export var edgeLimit : int = 10
-@export var shootTimeout : float = 0.75
+@export var shootTimeout : float = 1.25
 
 @onready var gameScene = find_parent("gameInfo")
 var currentShootTimeout = 0

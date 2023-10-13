@@ -16,4 +16,4 @@ func onShoot(bullet:Bullet,entity:Node2D):
 	pass       
 
 func moveBullet(speed:float,bullet:Bullet):
-	bullet.translate(Vector2.UP * speed * 4)
+	bullet.translate(Vector2.UP * speed)

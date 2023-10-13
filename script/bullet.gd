@@ -2,7 +2,7 @@ class_name  Bullet extends Node2D
 
 @onready var gameScene = find_parent("gameInfo")
 
-var speed = 1
+var speed = 350
 var pierce = 1
 var damage = 1
 
