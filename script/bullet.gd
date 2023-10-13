@@ -15,3 +15,10 @@ func _ready():
 func _process(delta):
 	for effect in gameScene.effects :
 		effect.moveBullet(speed* delta,self)
+
+
+func _on_area_2d_area_entered(target : Area2D):
+	if target.is_in_group("alien"):
+		damage -= 1
+		if damage == 0:
+			queue_free()

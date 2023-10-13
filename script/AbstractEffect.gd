@@ -15,9 +15,9 @@ func applyBallEffect(bullet:Bullet) -> Bullet:
     return bullet
         
 func onShoot(bullet:Bullet,emiter:Node2D) :
-    # shoot
+    # when shoot
     pass      
 
 func moveBullet(speed:float,bullet:Bullet):
     # bullet mouvement
-    pass 
+    pass
