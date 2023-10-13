@@ -12,7 +12,8 @@ func info() -> Dictionary :
 
 func onShoot(bullet:Bullet,entity:Node2D):
 	bullet.rotation_degrees = 0
-	entity.add_child(bullet)
+	bullet.position = entity.position
+	entity.get_parent().add_child(bullet)
 	pass       
 
 func moveBullet(speed:float,bullet:Bullet):
