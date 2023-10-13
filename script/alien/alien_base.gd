@@ -21,4 +21,13 @@ func _process(delta):
 
 func _on_area_2d_area_entered(target : Area2D):
 	if target.is_in_group("bullet"):
+		_Area2D.queue_free()
+		_AnimatedSprite2D.sprite_frames = load('res://sprite/alien/baseExplosion.tres')
+		var new_parent = get_parent().get_parent()
+		var pos = global_position
+		get_parent().remove_child(self)
+		new_parent.add_child(self)
+		global_position = pos
+		
+		await get_tree().create_timer(0.25).timeout
 		queue_free()
