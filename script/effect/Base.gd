@@ -13,6 +13,7 @@ func info() -> Dictionary :
 func onShoot(bullet:Bullet,entity:Node2D):
 	bullet.rotation_degrees = 0
 	bullet.position = entity.position
+	bullet.effects.append(self)
 	entity.get_parent().add_child(bullet)
 	pass       
 

@@ -5,6 +5,7 @@ class_name  Bullet extends Node2D
 var speed = 350
 var pierce = 1
 var damage = 1
+var effects = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -13,7 +14,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	for effect in gameScene.effects :
+	for effect in effects :
 		effect.moveBullet(speed* delta,self)
 
 
