@@ -28,6 +28,7 @@ func _process(delta):
 	if Input.is_action_pressed("ui_up") and currentShootTimeout <= 0:
 		currentShootTimeout = shootTimeout
 		var bullet = bulletObject.instantiate()
+		bullet.origin = "player"
 		for effect in gameScene.effects :
 			effect.applyBallEffect(bullet)
 

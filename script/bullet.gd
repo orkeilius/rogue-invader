@@ -6,6 +6,7 @@ var speed = 350
 var pierce = 1
 var damage = 1
 var effects = []
+var origin = ""
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -19,7 +20,7 @@ func _process(delta):
 
 
 func _on_area_2d_area_entered(target : Area2D):
-	if target.is_in_group("alien"):
+	if target.is_in_group("alien") and origin != "alien":
 		damage -= 1
 		if damage == 0:
 			queue_free()

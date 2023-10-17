@@ -34,8 +34,10 @@ func _process(delta):
 
 	position.x += delta * direction * currentSpeed
 	
+	if len(get_children()) == 0:
+		return
 	var screen = ProjectSettings.get_setting("display/window/size/viewport_width")
-	if (20 - getChildPosX().min()  > position.x) or (position.x + getChildPosX().max() > 570):
+	if (20 - getChildPosX().min() >  position.x) or (position.x + getChildPosX().max() > 570):
 		position.y += 20
 		direction *= -1
 	
