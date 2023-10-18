@@ -1,0 +1,39 @@
+[gd_resource type="SpriteFrames" load_steps=6 format=3 uid="uid://dqbngx88hcn4f"]
+
+[ext_resource type="Texture2D" uid="uid://bvi05uo8w57m6" path="res://sprite/bullet/bulletAlien3.png" id="1_b6vpy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jwp1p"]
+atlas = ExtResource("1_b6vpy")
+region = Rect2(0, 0, 3, 7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b8ygb"]
+atlas = ExtResource("1_b6vpy")
+region = Rect2(3, 0, 3, 7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r72o7"]
+atlas = ExtResource("1_b6vpy")
+region = Rect2(6, 0, 3, 7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_og243"]
+atlas = ExtResource("1_b6vpy")
+region = Rect2(9, 0, 3, 7)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jwp1p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b8ygb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r72o7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_og243")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
