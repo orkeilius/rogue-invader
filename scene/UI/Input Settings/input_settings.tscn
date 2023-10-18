@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bis1jbcqf4g4x"]
+[gd_scene load_steps=4 format=3 uid="uid://bis1jbcqf4g4x"]
 
 [ext_resource type="Script" path="res://script/UI/input_settings.gd" id="1_1c254"]
 [ext_resource type="PackedScene" uid="uid://dhg1q8rvyaafy" path="res://scene/UI/Input Settings/input_button.tscn" id="1_ofpi5"]
+[ext_resource type="FontFile" uid="uid://bpd1f760foopi" path="res://Fonts/space_invaders.ttf" id="3_vjru3"]
 
 [node name="input_settings" type="Control"]
 layout_mode = 3
@@ -58,3 +59,11 @@ layout_mode = 2
 
 [node name="InputButton5" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/ActionList" instance=ExtResource("1_ofpi5")]
 layout_mode = 2
+
+[node name="ResetButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+theme_override_fonts/font = ExtResource("3_vjru3")
+text = "Reset to default"
+
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/ResetButton" to="." method="_on_reset_button_pressed"]

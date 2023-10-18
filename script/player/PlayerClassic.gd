@@ -17,15 +17,17 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	var direction = 0
-	if Input.is_action_pressed("ui_left") and (position.x - edgeLimit > 0) :
+	if Input.is_action_pressed("move_left") and (position.x - edgeLimit > 0) :
 		direction = -1
-	if Input.is_action_pressed("ui_right") and (position.x + edgeLimit < ProjectSettings.get("display/window/size/viewport_width")) :
+	if Input.is_action_pressed("move_right") and (position.x + edgeLimit < ProjectSettings.get("display/window/size/viewport_width")) :
 		direction = 1
+	if Input.is_action_pressed("escape"):
+		get_tree().change_scene_to_file("res://scene/UI/SpaceInvadersMenu/space_invaders_menu.tscn")
 
 	position.x += direction * speed * delta 
 
 	currentShootTimeout -= delta
-	if Input.is_action_pressed("ui_up") and currentShootTimeout <= 0:
+	if Input.is_action_pressed("shoot") and currentShootTimeout <= 0:
 		currentShootTimeout = shootTimeout
 		var bullet = bulletObject.instantiate()
 		for effect in gameScene.effects :
@@ -33,7 +35,3 @@ func _process(delta):
 
 		for effect in gameScene.effects :
 			effect.onShoot(bullet,self)
-
-
-
-		
