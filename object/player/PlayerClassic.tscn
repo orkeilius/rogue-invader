@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vphst"]
 size = Vector2(13, 7)
 
-[node name="PlayerClassic" type="Area2D"]
+[node name="PlayerClassic" type="Area2D" groups=["player"]]
 scale = Vector2(2.5, 2.5)
 script = ExtResource("1_p6uoy")
 speed = 200.0

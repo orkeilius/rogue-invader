@@ -42,6 +42,12 @@ func _on_area_2d_area_entered(target : Area2D):
 		if target.origin == "player":
 			return
 		gameScene.hp -= 1
-		#_AnimatedSprite2D vi
-		await get_tree().create_timer(0.25).timeout
+		if gameScene.hp == 0:
+			get_tree().change_scene_to_file("res://scene/UI/main_menu.tscn")
+		
+		_AnimatedSprite2D.sprite_frames = load("res://sprite/player/classicHit.tres")
+		_AnimatedSprite2D.play("default")
+
+		await get_tree().create_timer(1).timeout
+		_AnimatedSprite2D.sprite_frames = load("res://sprite/player/classic.tres")
 		
