@@ -8,9 +8,11 @@
 script = ExtResource("1_p36yi")
 
 [node name="test alien" type="Node2D" parent="."]
+
 position = Vector2(45, 100)
 script = ExtResource("2_nwkyf")
 speed = 25.0
 
 [node name="PlayerClassic" parent="." instance=ExtResource("3_fb637")]
 position = Vector2(300, 640)
+

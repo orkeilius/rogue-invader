@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j35gv"]
 size = Vector2(33.3333, 24.4444)
 
-[node name="Alien" type="Node2D" groups=["alien"]]
+[node name="Alien" type="Area2D" groups=["alien"]]
 scale = Vector2(0.9, 0.9)
 script = ExtResource("1_5tvxs")
 
@@ -19,13 +19,10 @@ autoplay = "default"
 speed_scale = 0.25
 metadata/_edit_lock_ = true
 
-[node name="Area2D" type="Area2D" parent="." groups=["alien"]]
-metadata/_edit_lock_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -3.33333)
 shape = SubResource("RectangleShape2D_j35gv")
 debug_color = Color(0, 0.6, 0.701961, 0.419608)
 metadata/_edit_lock_ = true
 
-[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_entered" from="." to="." method="_on_area_2d_area_entered"]
