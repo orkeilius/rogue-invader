@@ -12,7 +12,7 @@ var bulletObject = load("res://object/bullet.tscn")
 var currentShootTimeout = 0
 
 
-var effects = [ShootDown.new(),MoveNormal.new()]
+var effects = [ShootDown.new(),MoveNormal.new(), RandomAlienBullet.new()]
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -21,7 +21,7 @@ func _ready():
 		.format({"variante":sprite_variante})
 	)
 	_AnimatedSprite2D.play("default")
-	# Replace with function body.
+
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -48,7 +48,6 @@ func _process(delta):
 		
 func _on_area_2d_area_entered(target : Area2D):
 	if target.is_in_group("bullet"):
-		print(target)
 		if target.origin == "alien":
 			return
 		
