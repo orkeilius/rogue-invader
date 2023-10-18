@@ -5,6 +5,7 @@ extends Node2D
 @export var shootTimeout : float = 1.25
 
 @onready var gameScene = find_parent("gameInfo")
+@onready var _AnimatedSprite2D = $AnimatedSprite2D
 var currentShootTimeout = 0
 var bulletObject = load("res://object/bullet.tscn")
 
@@ -28,6 +29,7 @@ func _process(delta):
 	if Input.is_action_pressed("ui_up") and currentShootTimeout <= 0:
 		currentShootTimeout = shootTimeout
 		var bullet = bulletObject.instantiate()
+		bullet.origin = "player"
 		for effect in gameScene.effects :
 			effect.applyBallEffect(bullet)
 
@@ -35,5 +37,11 @@ func _process(delta):
 			effect.onShoot(bullet,self)
 
 
-
+func _on_area_2d_area_entered(target : Area2D):
+	if target.is_in_group("bullet"):
+		if target.origin == "player":
+			return
+		gameScene.hp -= 1
+		#_AnimatedSprite2D vi
+		await get_tree().create_timer(0.25).timeout
 		
