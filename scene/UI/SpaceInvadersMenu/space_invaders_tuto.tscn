@@ -1,8 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://5kdtrxthq4pv"]
+[gd_scene load_steps=8 format=3 uid="uid://5kdtrxthq4pv"]
 
 [ext_resource type="Script" path="res://script/UI/space_invaders_tuto.gd" id="1_r726y"]
 [ext_resource type="PackedScene" uid="uid://coey72iys8r5e" path="res://scene/UI/SpaceInvadersMenu/space_invaders_hud.tscn" id="1_tk12x"]
 [ext_resource type="FontFile" uid="uid://bpd1f760foopi" path="res://Fonts/space_invaders.ttf" id="2_ketne"]
+[ext_resource type="SpriteFrames" uid="uid://ci355dhr0idk1" path="res://sprite/alien/base0.tres" id="4_77rde"]
+[ext_resource type="SpriteFrames" uid="uid://b0lmji7fy1rkh" path="res://sprite/alien/base2.tres" id="4_rjl64"]
+[ext_resource type="Script" path="res://script/UI/autoStartAnimation.gd" id="5_5inkr"]
+[ext_resource type="SpriteFrames" uid="uid://ctkfrr06a17od" path="res://sprite/alien/base1.tres" id="5_vl0gg"]
 
 [node name="SpaceInvadersTuto" type="Control"]
 layout_mode = 3
@@ -66,12 +70,32 @@ size_flags_vertical = 4
 layout_mode = 2
 
 [node name="BossSprite" type="AnimatedSprite2D" parent="VBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+position = Vector2(-30, 10)
+scale = Vector2(5, 5)
 
 [node name="Alien2Sprite" type="AnimatedSprite2D" parent="VBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+texture_filter = 1
+position = Vector2(-30, 70)
+scale = Vector2(5, 5)
+sprite_frames = ExtResource("4_77rde")
+speed_scale = 0.25
+script = ExtResource("5_5inkr")
 
 [node name="Alien1Sprite" type="AnimatedSprite2D" parent="VBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+texture_filter = 1
+position = Vector2(-30, 120)
+scale = Vector2(5, 5)
+sprite_frames = ExtResource("5_vl0gg")
+speed_scale = 0.25
+script = ExtResource("5_5inkr")
 
 [node name="Alien0Sprite" type="AnimatedSprite2D" parent="VBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+texture_filter = 1
+position = Vector2(-30, 170)
+scale = Vector2(5, 5)
+sprite_frames = ExtResource("4_rjl64")
+speed_scale = 0.25
+script = ExtResource("5_5inkr")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
