@@ -63,3 +63,9 @@ func _on_area_2d_area_entered(target : Area2D):
 		
 		await get_tree().create_timer(0.25).timeout
 		queue_free()
+
+
+func _on_body_entered(body):
+	if body.is_in_group("wall"):
+		body.collide(global_position,false,22)
+
