@@ -17,7 +17,7 @@ func _ready():
 
 func _process(delta):
 	if Input.is_action_pressed("shoot") and scenetimer_timeout:
-		get_tree().change_scene_to_file("res://scene/space_invader.tscn")
+		get_tree().change_scene_to_file("res://scene/gameMode/gamemodeClassic.tscn")
 	elif Input.is_action_just_pressed("escape") and scenetimer_timeout:
 		get_tree().change_scene_to_file("res://scene/UI/SpaceInvadersMenu/space_invaders_menu.tscn")
 

@@ -51,6 +51,7 @@ func _on_area_2d_area_entered(target : Area2D):
 		if target.origin == "alien":
 			return
 		
+		find_parent("gameInfo").score +=  (3 - sprite_variante) * 10
 		queue_free()
 		return
 

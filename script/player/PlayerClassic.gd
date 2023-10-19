@@ -8,6 +8,7 @@ extends Node2D
 @onready var _AnimatedSprite2D = $AnimatedSprite2D
 var currentShootTimeout = 0
 var bulletObject = load("res://object/bullet.tscn")
+var isStunt = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -17,6 +18,9 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	if isStunt:
+		return
+	
 	var direction = 0
 	if Input.is_action_pressed("move_left") and (position.x - edgeLimit > 0) :
 		direction = -1
@@ -48,7 +52,10 @@ func _on_area_2d_area_entered(target : Area2D):
 		
 		_AnimatedSprite2D.sprite_frames = load("res://sprite/player/classicHit.tres")
 		_AnimatedSprite2D.play("default")
+		isStunt = true
 
 		await get_tree().create_timer(1).timeout
+		position.x = 300
+		isStunt = false
 		_AnimatedSprite2D.sprite_frames = load("res://sprite/player/classic.tres")
 		
