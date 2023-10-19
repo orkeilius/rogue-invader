@@ -31,3 +31,10 @@ func _on_area_2d_area_entered(target : Area2D):
 	
 	elif target.is_in_group("player") and origin != "player":
 		queue_free()
+
+func _on_body_entered(body):
+
+	if body.is_in_group("wall"):
+		body.collide(global_position,true)
+		queue_free()
+ 
