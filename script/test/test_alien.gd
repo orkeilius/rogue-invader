@@ -5,12 +5,21 @@ var direction = 1
 
 @export var speed :float
 @export var speedBoost: float
+
 var sizeX = 11
 var sizeY = 5
 var currentSpeed = 0
+@onready var basePosition = position
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	
+	setAlien()
+	
+
+
+func setAlien():
 	for j in range(sizeY):
 		for i in range(sizeX):
 			var newAlien = alien.instantiate()
@@ -18,6 +27,7 @@ func _ready():
 			newAlien.position.x = 40 * i
 			newAlien.position.y = 45 * j
 			add_child(newAlien)
+
 
 func getChildPosX():
 	var out = []
@@ -35,8 +45,10 @@ func _process(delta):
 	position.x += delta * direction * currentSpeed
 	
 	if len(get_children()) == 0:
-		return
-	var screen = ProjectSettings.get_setting("display/window/size/viewport_width")
+		basePosition.y += 20
+		position = basePosition
+		setAlien()
+
 	if (20 - getChildPosX().min() >  position.x) or (position.x + getChildPosX().max() > 570):
 		position.y += 20
 		direction *= -1
