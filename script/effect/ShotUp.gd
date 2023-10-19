@@ -15,6 +15,3 @@ func onShoot(bullet:Bullet,entity:Node2D):
 	bullet.global_position = entity.global_position
 	bullet.effects.append(self)
 	entity.find_parent("gameInfo").add_child(bullet)
-	
-	pass       
-
