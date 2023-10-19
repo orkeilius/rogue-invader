@@ -1,4 +1,4 @@
-extends Node2D
+extends Area2D
 
 @export var spriteSpeed = 1
 @export var sprite_variante: int 
@@ -52,11 +52,11 @@ func _on_area_2d_area_entered(target : Area2D):
 			return
 		
 		find_parent("gameInfo").score +=  (3 - sprite_variante) * 10
-		queue_free()
-		return
+		monitorable = false
+		monitoring = false
 
 		_AnimatedSprite2D.sprite_frames = load('res://sprite/alien/baseExplosion.tres')
-		var new_parent = get_parent().get_parent()
+		var new_parent = find_parent("gameInfo")
 		var pos = global_position
 		get_parent().remove_child(self)
 		new_parent.add_child(self)
