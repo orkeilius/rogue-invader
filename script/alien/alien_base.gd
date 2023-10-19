@@ -52,18 +52,19 @@ func _on_area_2d_area_entered(target : Area2D):
 			return
 		
 		find_parent("gameInfo").score +=  (3 - sprite_variante) * 10
-		monitorable = false
-		monitoring = false
+		set_deferred("monitorable",false)
+		set_deferred("monitoring",false)
 
 		_AnimatedSprite2D.sprite_frames = load('res://sprite/alien/baseExplosion.tres')
 		var new_parent = find_parent("gameInfo")
 		var pos = global_position
-		get_parent().remove_child(self)
-		new_parent.add_child(self)
-		global_position = pos
+		get_parent().call_deferred("remove_child",self)
+		new_parent.call_deferred("add_child",self)
+		global_position
+		set_deferred("global_position",pos)
 		
 		await get_tree().create_timer(0.25).timeout
-		queue_free()
+		call_deferred("free")
 
 
 func _on_body_entered(body):
