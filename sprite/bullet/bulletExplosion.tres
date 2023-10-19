@@ -1,0 +1,14 @@
+[gd_resource type="SpriteFrames" load_steps=2 format=3 uid="uid://dee7nagjau25t"]
+
+[ext_resource type="Texture2D" uid="uid://dg6scynnikk71" path="res://sprite/bullet/bulletExplosion.png" id="1_d1nqc"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_d1nqc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
