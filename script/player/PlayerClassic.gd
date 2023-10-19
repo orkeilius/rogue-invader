@@ -43,6 +43,9 @@ func _process(delta):
 			effect.onShoot(bullet,self)
 
 func _on_area_2d_area_entered(target : Area2D):
+	if target.is_in_group("alien"):
+		get_tree().change_scene_to_file("res://scene/UI/main_menu.tscn")
+
 	if target.is_in_group("bullet"):
 		if target.origin == "player":
 			return
