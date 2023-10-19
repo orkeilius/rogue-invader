@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://c6o8ev2wh2wo"]
+
+[ext_resource type="PackedScene" uid="uid://dlkptdiwykaes" path="res://scene/SpaceInvaders.tscn" id="1_6m00p"]
+[ext_resource type="PackedScene" uid="uid://coey72iys8r5e" path="res://scene/UI/SpaceInvadersMenu/space_invaders_hud.tscn" id="2_t30np"]
+
+[node name="SpaceInvader" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="gameInfo" parent="." instance=ExtResource("1_6m00p")]
+
+[node name="SpaceInvadersHUD" parent="." instance=ExtResource("2_t30np")]
+layout_mode = 1
