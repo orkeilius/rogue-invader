@@ -29,6 +29,9 @@ func _on_area_2d_area_entered(target : Area2D):
 		if damage == 0:
 			queue_free()
 	
+	elif target.name == "gameBorder":
+		queue_free()
+
 	elif target.is_in_group("player") and origin != "player":
 		queue_free()
 
