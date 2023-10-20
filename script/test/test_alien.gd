@@ -14,12 +14,9 @@ var currentSpeed = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	
-	setAlien()
-	
+	var level = get_node("/root/GameData").level
+	position.y += 50 * (level - 1) 
 
-
-func setAlien():
 	for j in range(sizeY):
 		for i in range(sizeX):
 			var newAlien = alien.instantiate()
@@ -45,9 +42,8 @@ func _process(delta):
 	position.x += delta * direction * currentSpeed
 	
 	if len(get_children()) == 0:
-		basePosition.y += 20
-		position = basePosition
-		setAlien()
+		find_parent("gameInfo").nextLevel()
+		return
 
 	if (20 - getChildPosX().min() >  position.x) or (position.x + getChildPosX().max() > 570):
 		position.y += 20
