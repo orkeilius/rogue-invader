@@ -22,7 +22,6 @@ func query_score():
 	if dbtask.error != null:
 		print(dbtask.error)
 		return
-	print(dbtask.data)
 	
 	highscore = dbtask.data
 
