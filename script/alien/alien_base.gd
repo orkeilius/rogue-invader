@@ -60,7 +60,6 @@ func _on_area_2d_area_entered(target : Area2D):
 		var pos = global_position
 		get_parent().call_deferred("remove_child",self)
 		new_parent.call_deferred("add_child",self)
-		global_position
 		set_deferred("global_position",pos)
 		
 		await get_tree().create_timer(0.25).timeout
@@ -69,5 +68,5 @@ func _on_area_2d_area_entered(target : Area2D):
 
 func _on_body_entered(body):
 	if body.is_in_group("wall"):
-		body.collide(global_position,false,22)
+		find_parent("gameInfo").gameOver()
 

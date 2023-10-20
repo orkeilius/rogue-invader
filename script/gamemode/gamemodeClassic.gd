@@ -1,6 +1,6 @@
 extends Node
 
-@onready var globalData = get_node("/root/GameData")
+@onready var globalData :GameData = get_node("/root/GameData")
 
 var effects = [ShootUp.new(),MoveNormal.new()] 
 var hp = 3: set = _set_hp
@@ -9,12 +9,14 @@ var score :int : set = _set_score, get = _get_score
 var player = 0
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	print(globalData)
+	find_child("HighScore").text = "%05d" % globalData.highscore[0].score
+	_set_score(globalData.score)
+	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	_set_score(globalData.score)
 	pass
 
 
@@ -36,3 +38,9 @@ func nextLevel():
 	globalData.level += 1
 	get_tree().change_scene_to_file("res://scene/gameMode/gamemodeClassic.tscn")
 
+func gameOver():
+	Engine.time_scale = 0
+	await globalData.set_score("",globalData.score)
+	Engine.time_scale = 1
+	globalData.score = 0
+	get_tree().change_scene_to_file("res://scene/UI/main_menu.tscn")
