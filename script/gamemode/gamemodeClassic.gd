@@ -9,7 +9,6 @@ var score :int : set = _set_score, get = _get_score
 var player = 0
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	print(globalData)
 	find_child("HighScore").text = "%05d" % globalData.highscore[0].score
 	_set_score(globalData.score)
 	
