@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://coey72iys8r5e"]
+[gd_scene load_steps=3 format=3 uid="uid://coey72iys8r5e"]
 
 [ext_resource type="FontFile" uid="uid://bpd1f760foopi" path="res://Fonts/space_invaders.ttf" id="1_gp4mf"]
+[ext_resource type="LabelSettings" uid="uid://c04onmpcjccqr" path="res://Fonts/labelSettingsHud.tres" id="2_gplus"]
 
 [node name="SpaceInvadersHUD" type="Control"]
 layout_mode = 3
@@ -14,11 +15,12 @@ grow_vertical = 2
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
-offset_bottom = 94.0
+offset_bottom = 72.0
 grow_horizontal = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 0
 
 [node name="Score1Label" type="Label" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2
@@ -27,6 +29,7 @@ size_flags_vertical = 0
 theme_override_fonts/font = ExtResource("1_gp4mf")
 theme_override_font_sizes/font_size = 30
 text = "Score<1>"
+label_settings = ExtResource("2_gplus")
 horizontal_alignment = 1
 
 [node name="HighScoreLabel" type="Label" parent="VBoxContainer/HBoxContainer"]
@@ -35,12 +38,16 @@ size_flags_horizontal = 3
 theme_override_fonts/font = ExtResource("1_gp4mf")
 theme_override_font_sizes/font_size = 30
 text = "Hi-Score"
+label_settings = ExtResource("2_gplus")
+horizontal_alignment = 1
 
 [node name="Score2Label" type="Label" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 3
 theme_override_fonts/font = ExtResource("1_gp4mf")
 theme_override_font_sizes/font_size = 30
 text = "Score<2>"
+label_settings = ExtResource("2_gplus")
 horizontal_alignment = 1
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
@@ -52,6 +59,7 @@ size_flags_horizontal = 3
 theme_override_fonts/font = ExtResource("1_gp4mf")
 theme_override_font_sizes/font_size = 30
 text = "0000"
+label_settings = ExtResource("2_gplus")
 horizontal_alignment = 1
 
 [node name="HighScore" type="Label" parent="VBoxContainer/HBoxContainer2"]
@@ -60,6 +68,7 @@ size_flags_horizontal = 3
 theme_override_fonts/font = ExtResource("1_gp4mf")
 theme_override_font_sizes/font_size = 30
 text = "0000"
+label_settings = ExtResource("2_gplus")
 horizontal_alignment = 1
 
 [node name="Score2" type="Label" parent="VBoxContainer/HBoxContainer2"]
@@ -68,6 +77,7 @@ size_flags_horizontal = 3
 theme_override_fonts/font = ExtResource("1_gp4mf")
 theme_override_font_sizes/font_size = 30
 text = "0000"
+label_settings = ExtResource("2_gplus")
 horizontal_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
