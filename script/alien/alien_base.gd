@@ -2,10 +2,10 @@ extends Area2D
 
 @export var spriteSpeed = 1
 @export var sprite_variante: int 
-@onready var _CollisionShape2d = $CollisionShape2D
 @export var shootTimeout : float = 3
 @export var shootRandom = 20
 
+@onready var _CollisionShape2d = $CollisionShape2D
 @onready var _AnimatedSprite2D = $AnimatedSprite2D
 @onready var player = find_parent("gameInfo") .get_node("PlayerClassic")
 var bulletObject = load("res://object/bullet.tscn")
@@ -47,9 +47,7 @@ func _process(delta):
 
 		
 func _on_area_2d_area_entered(target : Area2D):
-	if target.is_in_group("bullet"):
-		if target.origin == "alien":
-			return
+	if target.is_in_group("bullet") and not (target.origin == "alien"):
 		
 		find_parent("gameInfo").score +=  (3 - sprite_variante) * 10
 		set_deferred("monitorable",false)

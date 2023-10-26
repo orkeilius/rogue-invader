@@ -1,12 +1,13 @@
-[gd_scene load_steps=12 format=3 uid="uid://dlkptdiwykaes"]
+[gd_scene load_steps=13 format=3 uid="uid://c8ru7s6rkh0er"]
 
 [ext_resource type="Script" path="res://script/gamemode/gamemodeClassic.gd" id="1_i2rdh"]
-[ext_resource type="Script" path="res://script/test/test_alien.gd" id="2_f42p3"]
+[ext_resource type="Script" path="res://script/alien/groupAlien.gd" id="2_mqut3"]
 [ext_resource type="PackedScene" uid="uid://ho3x8cny7427" path="res://object/player/PlayerClassic.tscn" id="3_8pftb"]
 [ext_resource type="PackedScene" uid="uid://c4ppla5gm0u4e" path="res://object/wall/wall.tscn" id="4_6ndkv"]
 [ext_resource type="PackedScene" uid="uid://coey72iys8r5e" path="res://scene/UI/SpaceInvadersMenu/space_invaders_hud.tscn" id="5_6ub4q"]
 [ext_resource type="Script" path="res://script/gameBorder.gd" id="6_6c3a3"]
 [ext_resource type="PackedScene" uid="uid://behuxm1brfvdl" path="res://object/wall/greenLine.tscn" id="7_scqhl"]
+[ext_resource type="PackedScene" uid="uid://dpghgp7ecyg84" path="res://object/alien/bossBase.tscn" id="8_n336v"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_8cxmj"]
 a = Vector2(300, -140)
@@ -14,27 +15,27 @@ b = Vector2(-300, -140)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_mcrex"]
 a = Vector2(300, -140)
-b = Vector2(300, 420)
+b = Vector2(300, 439)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_ewuwd"]
 a = Vector2(-300, 420)
 b = Vector2(300, 420)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_pnu7e"]
-a = Vector2(-300, -140)
-b = Vector2(-300, 420)
+a = Vector2(-300, -160)
+b = Vector2(-300, 440)
 
 [node name="gameInfo" type="Node2D"]
 script = ExtResource("1_i2rdh")
 
-[node name="test alien" type="Node2D" parent="."]
-position = Vector2(45, 100)
-script = ExtResource("2_f42p3")
+[node name="groupAlien" type="Node2D" parent="."]
+position = Vector2(45, 130)
+script = ExtResource("2_mqut3")
 speed = 25.0
 speedBoost = 5.0
 
 [node name="PlayerClassic" parent="." instance=ExtResource("3_8pftb")]
-position = Vector2(300, 640)
+position = Vector2(300, 635)
 
 [node name="walls" type="Node2D" parent="."]
 position = Vector2(300, 550)
@@ -69,11 +70,11 @@ grow_vertical = 1
 script = ExtResource("6_6c3a3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="gameBorder"]
-position = Vector2(300, 229)
+position = Vector2(300, 210)
 shape = SubResource("SegmentShape2D_8cxmj")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="gameBorder"]
-position = Vector2(300, 229)
+position = Vector2(300, 210)
 shape = SubResource("SegmentShape2D_mcrex")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="gameBorder"]
@@ -86,5 +87,10 @@ shape = SubResource("SegmentShape2D_pnu7e")
 
 [node name="greenLine" parent="gameBorder" instance=ExtResource("7_scqhl")]
 position = Vector2(0, 650)
+
+[node name="bossBase" parent="." instance=ExtResource("8_n336v")]
+position = Vector2(-32, 97)
+timeout = 0
+timeoutAfterRun = 0
 
 [connection signal="area_entered" from="gameBorder" to="gameBorder" method="_on_area_entered"]
