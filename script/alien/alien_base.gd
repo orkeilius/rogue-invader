@@ -5,7 +5,6 @@ extends Area2D
 @export var shootTimeout : float = 3
 @export var shootRandom = 20
 
-@onready var _CollisionShape2d = $CollisionShape2D
 @onready var _AnimatedSprite2D = $AnimatedSprite2D
 @onready var player = find_parent("gameInfo") .get_node("PlayerClassic")
 var bulletObject = load("res://object/bullet.tscn")
