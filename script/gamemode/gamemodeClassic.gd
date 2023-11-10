@@ -38,8 +38,5 @@ func nextLevel():
 	get_tree().change_scene_to_file("res://scene/gameMode/gamemodeClassic.tscn")
 
 func gameOver():
-	Engine.time_scale = 0
-	await globalData.set_score("",globalData.score)
-	Engine.time_scale = 1
-	globalData.score = 0
-	get_tree().change_scene_to_file("res://scene/UI/main_menu.tscn")
+	globalData.action = "setScore"
+	get_tree().change_scene_to_file("res://scene/UI/SpaceInvadersMenu/highscoreMenu.tscn")
