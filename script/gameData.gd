@@ -32,6 +32,6 @@ func set_score(name:String,newScore:int):
 	var dbtask : DatabaseTask = await Supabase.database.query(e).completed	
 
 	if dbtask.error != null:
-		print(dbtask.error)	
+		print("error : ",dbtask.error)	
 	
 	await query_score()
