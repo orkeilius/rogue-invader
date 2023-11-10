@@ -12,7 +12,7 @@ extends Area2D
 
 var running = false
 var stunt = false
-var currentTimeout = 0
+var currentTimeout = 5
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
