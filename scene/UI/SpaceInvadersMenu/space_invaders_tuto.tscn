@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://5kdtrxthq4pv"]
+[gd_scene load_steps=9 format=3 uid="uid://5kdtrxthq4pv"]
 
 [ext_resource type="Script" path="res://script/UI/space_invaders_tuto.gd" id="1_r726y"]
 [ext_resource type="PackedScene" uid="uid://coey72iys8r5e" path="res://scene/UI/SpaceInvadersMenu/space_invaders_hud.tscn" id="1_tk12x"]
 [ext_resource type="FontFile" uid="uid://bpd1f760foopi" path="res://Fonts/space_invaders.ttf" id="2_ketne"]
+[ext_resource type="SpriteFrames" uid="uid://dmq0wybtftcj4" path="res://sprite/alien/boss.tres" id="4_7ft8i"]
 [ext_resource type="SpriteFrames" uid="uid://ci355dhr0idk1" path="res://sprite/alien/base0.tres" id="4_77rde"]
 [ext_resource type="SpriteFrames" uid="uid://b0lmji7fy1rkh" path="res://sprite/alien/base2.tres" id="4_rjl64"]
 [ext_resource type="Script" path="res://script/UI/autoStartAnimation.gd" id="5_5inkr"]
@@ -70,8 +71,11 @@ size_flags_vertical = 4
 layout_mode = 2
 
 [node name="BossSprite" type="AnimatedSprite2D" parent="VBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
-position = Vector2(-30, 10)
-scale = Vector2(5, 5)
+modulate = Color(1, 0, 0, 1)
+texture_filter = 1
+position = Vector2(-30, 20)
+scale = Vector2(4, 4)
+sprite_frames = ExtResource("4_7ft8i")
 
 [node name="Alien2Sprite" type="AnimatedSprite2D" parent="VBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
 texture_filter = 1

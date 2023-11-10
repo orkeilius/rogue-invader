@@ -15,7 +15,7 @@ var currentSpeed = 0
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	var level = get_node("/root/GameData").level
-	position.y += 50 * (level - 1) 
+	position.y += 50 * (level) 
 
 	for j in range(sizeY):
 		for i in range(sizeX):

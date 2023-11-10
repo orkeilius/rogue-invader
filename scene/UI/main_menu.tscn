@@ -34,6 +34,11 @@ text = "Play"
 layout_mode = 2
 text = "Space Invaders"
 
+[node name="Highscore" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Highscore
+"
+
 [node name="Options" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 text = "Options"
@@ -45,5 +50,6 @@ text = "Quit"
 
 [connection signal="pressed" from="VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/SpaceInvadersButton" to="." method="_on_space_invaders_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/Highscore" to="." method="_on_highscore_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
