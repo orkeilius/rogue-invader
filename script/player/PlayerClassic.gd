@@ -10,7 +10,8 @@ var bulletObject = load("res://object/bullet.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	
+	addEffects([ShootUp,MoveNormal])
+	origin = "player"
 	pass # Replace with function body.
 
 
@@ -25,15 +26,9 @@ func _process(delta):
 	position.x += direction * speed * delta 
 
 	currentShootTimeout -= delta
-	if Input.is_action_pressed("ui_up") and currentShootTimeout <= 0:
+	if Input.is_action_pressed("shoot") and currentShootTimeout <= 0:
+		print(effects[0].name)
 		currentShootTimeout = shootTimeout
-		var bullet = bulletObject.instantiate()
-		for effect in gameScene.effects :
-			effect.applyBallEffect(bullet)
-
-		for effect in gameScene.effects :
-			effect.onShoot(bullet,self)
-
-
-
+		print()
+		call_shoot()
 		

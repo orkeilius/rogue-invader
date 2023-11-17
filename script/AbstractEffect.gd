@@ -26,7 +26,7 @@ func applyBallEffect(bullet:Bullet):
     # add effect to bullet before shoot
     pass
         
-func onShoot(bullet:Bullet,emiter:Node2D) :
+func onShoot(emiter:Node2D) :
     # when shoot
     pass      
 
