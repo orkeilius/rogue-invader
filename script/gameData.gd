@@ -6,6 +6,7 @@ var level = 1
 var score = 0
 var action = ""
 var highscore = [{name:"",score:0}]
+var player : Node2D = null
 
 
 # Called when the node enters the scene tree for the first time.

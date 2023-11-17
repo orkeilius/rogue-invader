@@ -6,7 +6,6 @@ class_name  Bullet extends Node2D
 @onready var gameScene = find_parent("gameInfo")
 var speed = 350
 var pierce = 1
-var damage = 1
 var effects = []
 var origin = ""
 
@@ -25,8 +24,8 @@ func _process(delta):
 
 func _on_area_2d_area_entered(target : Area2D):
 	if target.is_in_group("alien") and origin != "alien":
-		damage -= 1
-		if damage == 0:
+		pierce -= 1
+		if pierce == 0:
 			call_deferred("free")
 	
 	elif target.is_in_group("bullet") and origin != target.origin:

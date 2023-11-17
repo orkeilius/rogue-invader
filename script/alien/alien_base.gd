@@ -5,11 +5,13 @@ extends AbstractEffectEntity
 @export var shootRandom = 20
 
 @onready var _AnimatedSprite2D = $AnimatedSprite2D
-@onready var player = find_parent("gameInfo") .get_node("PlayerClassic")
 var currentShootTimeout = 0
-
+var player = null
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	await find_parent("gameInfo").ready
+	player = find_parent("gameInfo").get_node("PlayerClassic")
+	origin = "alien"
 	shootTimeout = 3
 	addEffects([ShootDown,MoveNormal, RandomAlienBullet])
 	_AnimatedSprite2D.sprite_frames = load(
@@ -31,7 +33,7 @@ func _process(delta):
 		if randi_range(1,shootRandom) == 1:
 			var distanceFromPlayer = abs(player.global_position.x - global_position.x ) 
 			if distanceFromPlayer < 100:
-				call_shoot("alien")
+				call_shoot()
 		
 
 

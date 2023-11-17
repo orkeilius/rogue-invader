@@ -2,7 +2,7 @@ extends Node2D
 
 var alien = load("res://object/alien/AlienBase.tscn")
 var direction = 1
-
+@export var level = -11
 @export var speed :float
 @export var speedBoost: float
 
@@ -14,13 +14,15 @@ var currentSpeed = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	var level = get_node("/root/GameData").level
-	position.y += 50 * (level) 
+	if level == -1:
+		get_node("/root/GameData").level 
+	else:
+		sizeY = level
 
 	for j in range(sizeY):
 		for i in range(sizeX):
 			var newAlien = alien.instantiate()
-			newAlien.sprite_variante = floor( (j + 1 )/2 )
+			newAlien.sprite_variante = floor( (j + 1 )/2 ) % 3
 			newAlien.position.x = 40 * i
 			newAlien.position.y = 45 * j
 			add_child(newAlien)
