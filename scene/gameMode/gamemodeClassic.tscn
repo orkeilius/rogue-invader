@@ -1,0 +1,90 @@
+[gd_scene load_steps=13 format=3 uid="uid://c8ru7s6rkh0er"]
+
+[ext_resource type="Script" path="res://script/gamemode/gamemodeClassic.gd" id="1_i2rdh"]
+[ext_resource type="PackedScene" uid="uid://ctlu6y13nnu5l" path="res://object/alien/groupAlien.tscn" id="2_na4hu"]
+[ext_resource type="PackedScene" uid="uid://ho3x8cny7427" path="res://object/player/PlayerClassic.tscn" id="3_8pftb"]
+[ext_resource type="PackedScene" uid="uid://c4ppla5gm0u4e" path="res://object/wall/wall.tscn" id="4_6ndkv"]
+[ext_resource type="PackedScene" uid="uid://coey72iys8r5e" path="res://scene/UI/SpaceInvadersMenu/space_invaders_hud.tscn" id="5_6ub4q"]
+[ext_resource type="Script" path="res://script/gameBorder.gd" id="6_6c3a3"]
+[ext_resource type="PackedScene" uid="uid://behuxm1brfvdl" path="res://object/wall/greenLine.tscn" id="7_scqhl"]
+[ext_resource type="PackedScene" uid="uid://dpghgp7ecyg84" path="res://object/alien/bossBase.tscn" id="8_n336v"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_8cxmj"]
+a = Vector2(300, -140)
+b = Vector2(-300, -140)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_mcrex"]
+a = Vector2(300, -140)
+b = Vector2(300, 439)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_ewuwd"]
+a = Vector2(-300, 420)
+b = Vector2(300, 420)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_pnu7e"]
+a = Vector2(-300, -160)
+b = Vector2(-300, 440)
+
+[node name="gameInfo" type="Node2D"]
+script = ExtResource("1_i2rdh")
+
+[node name="groupAlien" parent="." instance=ExtResource("2_na4hu")]
+
+[node name="PlayerClassic" parent="." instance=ExtResource("3_8pftb")]
+position = Vector2(300, 635)
+
+[node name="walls" type="Node2D" parent="."]
+position = Vector2(300, 550)
+
+[node name="wall" parent="walls" instance=ExtResource("4_6ndkv")]
+position = Vector2(-65, 0)
+scale = Vector2(3.5, 3.5)
+
+[node name="wall2" parent="walls" instance=ExtResource("4_6ndkv")]
+position = Vector2(-195, 0)
+scale = Vector2(3.5, 3.5)
+
+[node name="wall3" parent="walls" instance=ExtResource("4_6ndkv")]
+position = Vector2(65, 0)
+scale = Vector2(3.39144, 3.55227)
+
+[node name="wall4" parent="walls" instance=ExtResource("4_6ndkv")]
+position = Vector2(195, 0)
+scale = Vector2(3.5, 3.5)
+
+[node name="SpaceInvadersHUD" parent="." instance=ExtResource("5_6ub4q")]
+custom_minimum_size = Vector2(600, 700)
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 600.0
+offset_bottom = 700.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="gameBorder" type="Area2D" parent="."]
+script = ExtResource("6_6c3a3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="gameBorder"]
+position = Vector2(300, 210)
+shape = SubResource("SegmentShape2D_8cxmj")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="gameBorder"]
+position = Vector2(300, 210)
+shape = SubResource("SegmentShape2D_mcrex")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="gameBorder"]
+position = Vector2(300, 229)
+shape = SubResource("SegmentShape2D_ewuwd")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="gameBorder"]
+position = Vector2(300, 229)
+shape = SubResource("SegmentShape2D_pnu7e")
+
+[node name="greenLine" parent="gameBorder" instance=ExtResource("7_scqhl")]
+position = Vector2(0, 650)
+
+[node name="bossBase" parent="." instance=ExtResource("8_n336v")]
+position = Vector2(-32, 90)
+
+[connection signal="area_entered" from="gameBorder" to="gameBorder" method="_on_area_entered"]

@@ -1,0 +1,324 @@
+[gd_scene load_steps=4 format=3 uid="uid://bl66l48dnib7v"]
+
+[ext_resource type="Script" path="res://script/UI/highscore_menu.gd" id="1_c2kek"]
+[ext_resource type="FontFile" uid="uid://bpd1f760foopi" path="res://Fonts/space_invaders.ttf" id="2_dp7kq"]
+[ext_resource type="LabelSettings" uid="uid://c04onmpcjccqr" path="res://Fonts/labelSettingsHud.tres" id="3_p2p3t"]
+
+[node name="highscoreMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_c2kek")
+
+[node name="menu" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 600.0
+offset_bottom = 700.0
+
+[node name="scoremenu" type="Control" parent="menu"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="scoreList" type="VBoxContainer" parent="menu/scoremenu"]
+layout_mode = 2
+offset_left = 25.0
+offset_top = 150.0
+offset_right = 575.0
+offset_bottom = 650.0
+theme_override_constants/separation = 10
+
+[node name="score1" type="HBoxContainer" parent="menu/scoremenu/scoreList"]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="Label" type="Label" parent="menu/scoremenu/scoreList/score1"]
+custom_minimum_size = Vector2(260, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_dp7kq")
+label_settings = ExtResource("3_p2p3t")
+horizontal_alignment = 2
+text_overrun_behavior = 3
+
+[node name="Label2" type="Label" parent="menu/scoremenu/scoreList/score1"]
+custom_minimum_size = Vector2(260, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_dp7kq")
+label_settings = ExtResource("3_p2p3t")
+
+[node name="score2" type="HBoxContainer" parent="menu/scoremenu/scoreList"]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="Label" type="Label" parent="menu/scoremenu/scoreList/score2"]
+custom_minimum_size = Vector2(260, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_dp7kq")
+label_settings = ExtResource("3_p2p3t")
+horizontal_alignment = 2
+text_overrun_behavior = 3
+
+[node name="Label2" type="Label" parent="menu/scoremenu/scoreList/score2"]
+custom_minimum_size = Vector2(260, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_dp7kq")
+label_settings = ExtResource("3_p2p3t")
+
+[node name="score3" type="HBoxContainer" parent="menu/scoremenu/scoreList"]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="Label" type="Label" parent="menu/scoremenu/scoreList/score3"]
+custom_minimum_size = Vector2(260, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_dp7kq")
+label_settings = ExtResource("3_p2p3t")
+horizontal_alignment = 2
+text_overrun_behavior = 3
+
+[node name="Label2" type="Label" parent="menu/scoremenu/scoreList/score3"]
+custom_minimum_size = Vector2(260, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_dp7kq")
+label_settings = ExtResource("3_p2p3t")
+
+[node name="score4" type="HBoxContainer" parent="menu/scoremenu/scoreList"]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="Label" type="Label" parent="menu/scoremenu/scoreList/score4"]
+custom_minimum_size = Vector2(260, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_dp7kq")
+label_settings = ExtResource("3_p2p3t")
+horizontal_alignment = 2
+text_overrun_behavior = 3
+
+[node name="Label2" type="Label" parent="menu/scoremenu/scoreList/score4"]
+custom_minimum_size = Vector2(260, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_dp7kq")
+label_settings = ExtResource("3_p2p3t")
+
+[node name="score5" type="HBoxContainer" parent="menu/scoremenu/scoreList"]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="Label" type="Label" parent="menu/scoremenu/scoreList/score5"]
+custom_minimum_size = Vector2(260, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_dp7kq")
+label_settings = ExtResource("3_p2p3t")
+horizontal_alignment = 2
+text_overrun_behavior = 3
+
+[node name="Label2" type="Label" parent="menu/scoremenu/scoreList/score5"]
+custom_minimum_size = Vector2(260, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_dp7kq")
+label_settings = ExtResource("3_p2p3t")
+
+[node name="score6" type="HBoxContainer" parent="menu/scoremenu/scoreList"]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="Label" type="Label" parent="menu/scoremenu/scoreList/score6"]
+custom_minimum_size = Vector2(260, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_dp7kq")
+label_settings = ExtResource("3_p2p3t")
+horizontal_alignment = 2
+text_overrun_behavior = 3
+
+[node name="Label2" type="Label" parent="menu/scoremenu/scoreList/score6"]
+custom_minimum_size = Vector2(260, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_dp7kq")
+label_settings = ExtResource("3_p2p3t")
+
+[node name="score7" type="HBoxContainer" parent="menu/scoremenu/scoreList"]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="Label" type="Label" parent="menu/scoremenu/scoreList/score7"]
+custom_minimum_size = Vector2(260, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_dp7kq")
+label_settings = ExtResource("3_p2p3t")
+horizontal_alignment = 2
+text_overrun_behavior = 3
+
+[node name="Label2" type="Label" parent="menu/scoremenu/scoreList/score7"]
+custom_minimum_size = Vector2(260, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_dp7kq")
+label_settings = ExtResource("3_p2p3t")
+
+[node name="score8" type="HBoxContainer" parent="menu/scoremenu/scoreList"]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="Label" type="Label" parent="menu/scoremenu/scoreList/score8"]
+custom_minimum_size = Vector2(260, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_dp7kq")
+label_settings = ExtResource("3_p2p3t")
+horizontal_alignment = 2
+text_overrun_behavior = 3
+
+[node name="Label2" type="Label" parent="menu/scoremenu/scoreList/score8"]
+custom_minimum_size = Vector2(260, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_dp7kq")
+label_settings = ExtResource("3_p2p3t")
+
+[node name="score9" type="HBoxContainer" parent="menu/scoremenu/scoreList"]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="Label" type="Label" parent="menu/scoremenu/scoreList/score9"]
+custom_minimum_size = Vector2(260, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_dp7kq")
+label_settings = ExtResource("3_p2p3t")
+horizontal_alignment = 2
+text_overrun_behavior = 3
+
+[node name="Label2" type="Label" parent="menu/scoremenu/scoreList/score9"]
+custom_minimum_size = Vector2(260, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_dp7kq")
+label_settings = ExtResource("3_p2p3t")
+
+[node name="score10" type="HBoxContainer" parent="menu/scoremenu/scoreList"]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="Label" type="Label" parent="menu/scoremenu/scoreList/score10"]
+custom_minimum_size = Vector2(260, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_dp7kq")
+label_settings = ExtResource("3_p2p3t")
+horizontal_alignment = 2
+text_overrun_behavior = 3
+
+[node name="Label2" type="Label" parent="menu/scoremenu/scoreList/score10"]
+custom_minimum_size = Vector2(260, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_dp7kq")
+label_settings = ExtResource("3_p2p3t")
+
+[node name="score11" type="HBoxContainer" parent="menu/scoremenu/scoreList"]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="Label" type="Label" parent="menu/scoremenu/scoreList/score11"]
+custom_minimum_size = Vector2(260, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_dp7kq")
+label_settings = ExtResource("3_p2p3t")
+horizontal_alignment = 2
+text_overrun_behavior = 3
+
+[node name="Label2" type="Label" parent="menu/scoremenu/scoreList/score11"]
+custom_minimum_size = Vector2(260, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_dp7kq")
+label_settings = ExtResource("3_p2p3t")
+
+[node name="score12" type="HBoxContainer" parent="menu/scoremenu/scoreList"]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="Label" type="Label" parent="menu/scoremenu/scoreList/score12"]
+custom_minimum_size = Vector2(260, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_dp7kq")
+label_settings = ExtResource("3_p2p3t")
+horizontal_alignment = 2
+text_overrun_behavior = 3
+
+[node name="Label2" type="Label" parent="menu/scoremenu/scoreList/score12"]
+custom_minimum_size = Vector2(260, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_dp7kq")
+label_settings = ExtResource("3_p2p3t")
+
+[node name="backButton" type="Button" parent="menu/scoremenu"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 610.0
+offset_right = 108.0
+offset_bottom = 651.0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("2_dp7kq")
+theme_override_font_sizes/font_size = 24
+text = "Back"
+
+[node name="nameMenu" type="VBoxContainer" parent="menu"]
+layout_mode = 0
+offset_left = 200.0
+offset_top = 300.0
+offset_right = 400.0
+offset_bottom = 359.0
+scale = Vector2(0.93, 0.93)
+
+[node name="Label" type="Label" parent="menu/nameMenu"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_dp7kq")
+text = "enter your name"
+horizontal_alignment = 1
+
+[node name="nameEntry" type="LineEdit" parent="menu/nameMenu"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_dp7kq")
+alignment = 1
+max_length = 10
+caret_blink = true
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -104.0
+offset_top = 50.0
+offset_right = 104.0
+offset_bottom = 97.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_dp7kq")
+theme_override_font_sizes/font_size = 32
+text = "Highscore"
+
+[connection signal="pressed" from="menu/scoremenu/backButton" to="." method="_on_back_button_pressed"]

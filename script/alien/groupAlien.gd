@@ -4,15 +4,27 @@ var alien = load("res://object/alien/AlienBase.tscn")
 var direction = 1
 
 @export var speed :float
+@export var speedBoost: float
+
+var sizeX = 11
+var sizeY = 5
+var currentSpeed = 0
+@onready var basePosition = position
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	for j in range(5):
-		for i in range(11):
+	var level = get_node("/root/GameData").level
+	position.y += 50 * (level) 
+
+	for j in range(sizeY):
+		for i in range(sizeX):
 			var newAlien = alien.instantiate()
 			newAlien.sprite_variante = floor( (j + 1 )/2 )
 			newAlien.position.x = 40 * i
 			newAlien.position.y = 45 * j
 			add_child(newAlien)
+
 
 func getChildPosX():
 	var out = []
@@ -23,10 +35,17 @@ func getChildPosX():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	var screen = ProjectSettings.get_setting("display/window/size/viewport_width")
-	position.x += delta * direction * speed
+	currentSpeed = speed + (speedBoost * max(0,  25 - len(get_children())))
+	for child in get_children():
+		child.spriteSpeed = currentSpeed / 40
+
+	position.x += delta * direction * currentSpeed
 	
-	if (20 - getChildPosX().min()  > position.x) or (position.x + getChildPosX().max() > 570):
+	if len(get_children()) == 0:
+		find_parent("gameInfo").nextLevel()
+		return
+
+	if (20 - getChildPosX().min() >  position.x) or (position.x + getChildPosX().max() > 570):
 		position.y += 20
 		direction *= -1
 	

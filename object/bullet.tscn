@@ -5,7 +5,7 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7u050"]
 
-[node name="bullet" type="Node2D"]
+[node name="bullet" type="Area2D" groups=["bullet"]]
 scale = Vector2(2, 2)
 script = ExtResource("1_8wqjc")
 
@@ -13,11 +13,9 @@ script = ExtResource("1_8wqjc")
 sprite_frames = ExtResource("2_xk51w")
 metadata/_edit_lock_ = true
 
-[node name="Area2D" type="Area2D" parent="." groups=["bullet"]]
-metadata/_edit_lock_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(0.2, 0.2)
 shape = SubResource("CircleShape2D_7u050")
 
-[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_entered" from="." to="." method="_on_area_2d_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

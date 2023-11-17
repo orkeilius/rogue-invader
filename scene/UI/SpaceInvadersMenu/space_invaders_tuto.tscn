@@ -1,0 +1,136 @@
+[gd_scene load_steps=9 format=3 uid="uid://5kdtrxthq4pv"]
+
+[ext_resource type="Script" path="res://script/UI/space_invaders_tuto.gd" id="1_r726y"]
+[ext_resource type="PackedScene" uid="uid://coey72iys8r5e" path="res://scene/UI/SpaceInvadersMenu/space_invaders_hud.tscn" id="1_tk12x"]
+[ext_resource type="FontFile" uid="uid://bpd1f760foopi" path="res://Fonts/space_invaders.ttf" id="2_ketne"]
+[ext_resource type="SpriteFrames" uid="uid://dmq0wybtftcj4" path="res://sprite/alien/boss.tres" id="4_7ft8i"]
+[ext_resource type="SpriteFrames" uid="uid://ci355dhr0idk1" path="res://sprite/alien/base0.tres" id="4_77rde"]
+[ext_resource type="SpriteFrames" uid="uid://b0lmji7fy1rkh" path="res://sprite/alien/base2.tres" id="4_rjl64"]
+[ext_resource type="Script" path="res://script/UI/autoStartAnimation.gd" id="5_5inkr"]
+[ext_resource type="SpriteFrames" uid="uid://ctkfrr06a17od" path="res://sprite/alien/base1.tres" id="5_vl0gg"]
+
+[node name="SpaceInvadersTuto" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_r726y")
+
+[node name="SpaceInvadersHUD" parent="." instance=ExtResource("1_tk12x")]
+layout_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -92.5
+offset_right = 20.0
+offset_bottom = 92.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 28
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_ketne")
+theme_override_font_sizes/font_size = 30
+text = "Play"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_ketne")
+theme_override_font_sizes/font_size = 30
+text = "space invaders"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="VBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_ketne")
+theme_override_font_sizes/font_size = 30
+text = "*score advance table*"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="BossSprite" type="AnimatedSprite2D" parent="VBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+modulate = Color(1, 0, 0, 1)
+texture_filter = 1
+position = Vector2(-30, 20)
+scale = Vector2(4, 4)
+sprite_frames = ExtResource("4_7ft8i")
+
+[node name="Alien2Sprite" type="AnimatedSprite2D" parent="VBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+texture_filter = 1
+position = Vector2(-30, 70)
+scale = Vector2(5, 5)
+sprite_frames = ExtResource("4_77rde")
+speed_scale = 0.25
+script = ExtResource("5_5inkr")
+
+[node name="Alien1Sprite" type="AnimatedSprite2D" parent="VBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+texture_filter = 1
+position = Vector2(-30, 120)
+scale = Vector2(5, 5)
+sprite_frames = ExtResource("5_vl0gg")
+speed_scale = 0.25
+script = ExtResource("5_5inkr")
+
+[node name="Alien0Sprite" type="AnimatedSprite2D" parent="VBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+texture_filter = 1
+position = Vector2(-30, 170)
+scale = Vector2(5, 5)
+sprite_frames = ExtResource("4_rjl64")
+speed_scale = 0.25
+script = ExtResource("5_5inkr")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="BossLabel" type="Label" parent="VBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_ketne")
+theme_override_font_sizes/font_size = 30
+
+[node name="Alien2Label" type="Label" parent="VBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_ketne")
+theme_override_font_sizes/font_size = 30
+
+[node name="Alien1Label" type="Label" parent="VBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_ketne")
+theme_override_font_sizes/font_size = 30
+
+[node name="Alien0Label" type="Label" parent="VBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_ketne")
+theme_override_font_sizes/font_size = 30
+
+[node name="SceneTimer" type="Timer" parent="."]
+wait_time = 0.5
+
+[node name="next_char" type="Timer" parent="."]
+wait_time = 0.5
+
+[connection signal="timeout" from="SceneTimer" to="." method="_on_scene_timer_timeout"]
+[connection signal="timeout" from="next_char" to="." method="_on_next_char_timeout"]

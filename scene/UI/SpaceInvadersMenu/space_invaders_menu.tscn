@@ -1,0 +1,43 @@
+[gd_scene load_steps=4 format=3 uid="uid://cny6bsothxgia"]
+
+[ext_resource type="PackedScene" uid="uid://coey72iys8r5e" path="res://scene/UI/SpaceInvadersMenu/space_invaders_hud.tscn" id="1_bafm7"]
+[ext_resource type="Script" path="res://script/UI/space_invaders_menu.gd" id="1_u1p53"]
+[ext_resource type="FontFile" uid="uid://bpd1f760foopi" path="res://Fonts/space_invaders.ttf" id="2_ey86j"]
+
+[node name="SpaceInvadersMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_u1p53")
+
+[node name="SpaceInvadersScore" parent="." instance=ExtResource("1_bafm7")]
+layout_mode = 1
+
+[node name="InsertCoinLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -61.0
+offset_top = -39.0
+offset_right = 61.0
+offset_bottom = 39.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_ey86j")
+theme_override_font_sizes/font_size = 30
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="next_char" type="Timer" parent="."]
+
+[node name="SceneTimer" type="Timer" parent="."]
+wait_time = 0.5
+
+[connection signal="timeout" from="next_char" to="." method="_on_next_char_timeout"]
+[connection signal="timeout" from="SceneTimer" to="." method="_on_scene_timer_timeout"]
