@@ -6,8 +6,8 @@ func _ready():
 	$VBoxContainer/PlayButton.grab_focus()
 
 func _on_play_button_pressed():
-	pass # Replace with function body.
-
+	get_node("/root/GameData").level = 0
+	get_tree().change_scene_to_file("res://scene/gameMode/gamemodeRogue.tscn")
 
 func _on_space_invaders_button_pressed():
 	get_tree().change_scene_to_file("res://scene/UI/SpaceInvadersMenu/space_invaders_menu.tscn")

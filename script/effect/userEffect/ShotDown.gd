@@ -1,13 +1,6 @@
 class_name ShootDown extends AbstractEffect
 
-func _init():
-	pass
-
-
-func info() -> Dictionary :
-	return {
-		"name":'shot down'
-	}
+const name = "shot down"
 
 
 func onShoot(bullet:Bullet,entity:Node2D):
