@@ -30,9 +30,7 @@ func _process(delta):
 
 	currentShootTimeout -= delta
 	if Input.is_action_pressed("shoot") and currentShootTimeout <= 0:
-		print(effects[0].name)
 		currentShootTimeout = shootTimeout
-		print()
 		call_shoot()
 
 func _on_area_2d_area_entered(target : Area2D):
