@@ -7,7 +7,7 @@ func _ready():
 
 func _on_play_button_pressed():
 	get_node("/root/GameData").level = 0
-	get_tree().change_scene_to_file("res://scene/gameMode/gamemodeRogue.tscn")
+	get_tree().change_scene_to_file("res://scene/UI/effectList.tscn")
 
 func _on_space_invaders_button_pressed():
 	get_tree().change_scene_to_file("res://scene/UI/SpaceInvadersMenu/space_invaders_menu.tscn")

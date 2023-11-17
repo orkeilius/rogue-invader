@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://6p6hllnne41x"]
 
-[ext_resource type="Script" path="res://script/gamemode/gamemodeClassic.gd" id="1_i2rdh"]
-[ext_resource type="PackedScene" uid="uid://ho3x8cny7427" path="res://object/player/PlayerClassic.tscn" id="3_8pftb"]
+[ext_resource type="Script" path="res://script/gamemode/gamemodeRogue.gd" id="1_0c4ky"]
+[ext_resource type="Script" path="res://script/alien/alienGenerator.gd" id="2_bmufy"]
 [ext_resource type="PackedScene" uid="uid://c4ppla5gm0u4e" path="res://object/wall/wall.tscn" id="4_6ndkv"]
 [ext_resource type="PackedScene" uid="uid://coey72iys8r5e" path="res://scene/UI/SpaceInvadersMenu/space_invaders_hud.tscn" id="5_6ub4q"]
 [ext_resource type="Script" path="res://script/gameBorder.gd" id="6_6c3a3"]
@@ -24,12 +24,10 @@ a = Vector2(-300, -160)
 b = Vector2(-300, 440)
 
 [node name="gameInfo" type="Node2D"]
-script = ExtResource("1_i2rdh")
+script = ExtResource("1_0c4ky")
 
 [node name="alien" type="Node2D" parent="."]
-
-[node name="PlayerClassic" parent="." instance=ExtResource("3_8pftb")]
-position = Vector2(300, 635)
+script = ExtResource("2_bmufy")
 
 [node name="walls" type="Node2D" parent="."]
 position = Vector2(300, 550)
@@ -44,7 +42,7 @@ scale = Vector2(3.5, 3.5)
 
 [node name="wall3" parent="walls" instance=ExtResource("4_6ndkv")]
 position = Vector2(65, 0)
-scale = Vector2(3.39144, 3.55227)
+scale = Vector2(3.5, 3.5)
 
 [node name="wall4" parent="walls" instance=ExtResource("4_6ndkv")]
 position = Vector2(195, 0)

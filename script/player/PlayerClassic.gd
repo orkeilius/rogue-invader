@@ -9,6 +9,7 @@ var isStunt = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	addEffects([ShootUp,MoveNormal])
+	origin = "player"
 	pass # Replace with function body.
 
 
@@ -29,8 +30,10 @@ func _process(delta):
 
 	currentShootTimeout -= delta
 	if Input.is_action_pressed("shoot") and currentShootTimeout <= 0:
+		print(effects[0].name)
 		currentShootTimeout = shootTimeout
-		call_shoot("player")
+		print()
+		call_shoot()
 
 func _on_area_2d_area_entered(target : Area2D):
 	if target.is_in_group("alien"):
