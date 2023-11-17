@@ -21,5 +21,4 @@ func _ready():
 		var object = enemie["object"].instantiate()
 		object.level = enemie["level"]
 		add_child(object)
-		print(object.global_position)
 		

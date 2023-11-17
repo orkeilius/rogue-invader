@@ -2,7 +2,7 @@ extends Node2D
 
 var alien = load("res://object/alien/AlienBase.tscn")
 var direction = 1
-@export var level = -11
+@export var level = -1
 @export var speed :float
 @export var speedBoost: float
 
