@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://b271hnkc0grbl"]
+
+[ext_resource type="Script" path="res://script/gamemode/gamemodeClassic.gd" id="1_rqy1i"]
+[ext_resource type="Script" path="res://script/test/test_alien.gd" id="1_yc4i0"]
+[ext_resource type="PackedScene" uid="uid://ho3x8cny7427" path="res://object/player/PlayerClassic.tscn" id="2_15a5w"]
+
+[node name="gameInfo" type="Node2D"]
+script = ExtResource("1_rqy1i")
+
+[node name="test alien" type="Node2D" parent="."]
+position = Vector2(45, 10)
+script = ExtResource("1_yc4i0")
+speed = 25.0
+
+[node name="PlayerClassic" parent="." instance=ExtResource("2_15a5w")]
+position = Vector2(300, 650)
