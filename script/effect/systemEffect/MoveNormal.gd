@@ -1,10 +1,7 @@
 class_name MoveNormal extends AbstractEffect
 
 
-func info() -> Dictionary :
-	return {
-		"name":'Move normal'
-	}
+const name = "move normal"
 
 func applyBallEffect(bullet:Bullet):
 	# add effect to bullet before shoot

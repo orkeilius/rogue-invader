@@ -1,8 +1,7 @@
 class_name RandomAlienBullet extends AbstractEffect
 # you can only overwrite method in gdscript
 
-func info() -> Dictionary :
-    return {}
+const name = "random alien sprite"
 
 func applyBallEffect(bullet:Bullet):
     bullet.sprite = load(

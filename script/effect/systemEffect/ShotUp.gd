@@ -1,17 +1,10 @@
-class_name ShootDown extends AbstractEffect
+extends AbstractEffect
 
-
-func info() -> Dictionary :
-	return {
-		"name":'shot down'
-	}
+const name = "shot up"
 
 
 func onShoot(bullet:Bullet,entity:Node2D):
-	bullet.rotation_degrees = 180
+	bullet.rotation_degrees = 0
 	bullet.global_position = entity.global_position
 	bullet.effects.append(self)
 	entity.find_parent("gameInfo").add_child(bullet)
-	pass       
-
-
