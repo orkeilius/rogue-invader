@@ -1,8 +1,5 @@
 class_name ShootDown extends AbstractEffect
 
-func _init():
-	pass
-
 
 func info() -> Dictionary :
 	return {

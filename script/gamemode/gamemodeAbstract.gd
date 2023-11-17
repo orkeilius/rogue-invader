@@ -2,7 +2,6 @@ class_name gamemodeAbstract extends Node
 
 @onready var globalData :GameData = get_node("/root/GameData")
 
-var effects = [ShootUp.new(),MoveNormal.new()] 
 var _score = [0,0]
 var score :int : set = _set_score, get = _get_score
 var player = 0

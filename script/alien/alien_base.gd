@@ -1,20 +1,17 @@
-extends Area2D
+extends AbstractEffectEntity
 
 @export var spriteSpeed = 1
 @export var sprite_variante: int 
-@export var shootTimeout : float = 3
 @export var shootRandom = 20
 
 @onready var _AnimatedSprite2D = $AnimatedSprite2D
 @onready var player = find_parent("gameInfo") .get_node("PlayerClassic")
-var bulletObject = load("res://object/bullet.tscn")
 var currentShootTimeout = 0
-
-
-var effects = [ShootDown.new(),MoveNormal.new(), RandomAlienBullet.new()]
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	shootTimeout = 3
+	addEffects([ShootDown,MoveNormal, RandomAlienBullet])
 	_AnimatedSprite2D.sprite_frames = load(
 		'res://sprite/alien/base{variante}.tres'
 		.format({"variante":sprite_variante})
@@ -34,13 +31,8 @@ func _process(delta):
 		if randi_range(1,shootRandom) == 1:
 			var distanceFromPlayer = abs(player.global_position.x - global_position.x ) 
 			if distanceFromPlayer < 100:
-				var bullet = bulletObject.instantiate()
-				bullet.origin = "alien"
-				for effect in effects :
-					effect.applyBallEffect(bullet)
-				
-				for effect in effects :
-					effect.onShoot(bullet,self)
+				call_shoot("alien")
+		
 
 
 

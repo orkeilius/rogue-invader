@@ -1,9 +1,5 @@
 class_name ShootUp extends AbstractEffect
 
-func _init():
-	pass
-
-
 func info() -> Dictionary :
 	return {
 		"name":'shot up'
