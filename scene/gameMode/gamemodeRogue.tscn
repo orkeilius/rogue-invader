@@ -1,13 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://c8ru7s6rkh0er"]
+[gd_scene load_steps=11 format=3 uid="uid://6p6hllnne41x"]
 
 [ext_resource type="Script" path="res://script/gamemode/gamemodeClassic.gd" id="1_i2rdh"]
-[ext_resource type="PackedScene" uid="uid://ctlu6y13nnu5l" path="res://object/alien/groupAlien.tscn" id="2_na4hu"]
 [ext_resource type="PackedScene" uid="uid://ho3x8cny7427" path="res://object/player/PlayerClassic.tscn" id="3_8pftb"]
 [ext_resource type="PackedScene" uid="uid://c4ppla5gm0u4e" path="res://object/wall/wall.tscn" id="4_6ndkv"]
 [ext_resource type="PackedScene" uid="uid://coey72iys8r5e" path="res://scene/UI/SpaceInvadersMenu/space_invaders_hud.tscn" id="5_6ub4q"]
 [ext_resource type="Script" path="res://script/gameBorder.gd" id="6_6c3a3"]
 [ext_resource type="PackedScene" uid="uid://behuxm1brfvdl" path="res://object/wall/greenLine.tscn" id="7_scqhl"]
-[ext_resource type="PackedScene" uid="uid://dpghgp7ecyg84" path="res://object/alien/bossBase.tscn" id="8_n336v"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_8cxmj"]
 a = Vector2(300, -140)
@@ -28,7 +26,7 @@ b = Vector2(-300, 440)
 [node name="gameInfo" type="Node2D"]
 script = ExtResource("1_i2rdh")
 
-[node name="groupAlien" parent="." instance=ExtResource("2_na4hu")]
+[node name="alien" type="Node2D" parent="."]
 
 [node name="PlayerClassic" parent="." instance=ExtResource("3_8pftb")]
 position = Vector2(300, 635)
@@ -83,8 +81,5 @@ shape = SubResource("SegmentShape2D_pnu7e")
 
 [node name="greenLine" parent="gameBorder" instance=ExtResource("7_scqhl")]
 position = Vector2(0, 650)
-
-[node name="bossBase" parent="." instance=ExtResource("8_n336v")]
-position = Vector2(-32, 90)
 
 [connection signal="area_entered" from="gameBorder" to="gameBorder" method="_on_area_entered"]
