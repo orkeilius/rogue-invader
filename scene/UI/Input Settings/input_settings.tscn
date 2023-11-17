@@ -63,6 +63,10 @@ layout_mode = 2
 [node name="ResetButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 focus_mode = 0
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 1, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0.588235, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0.588235, 0, 1)
 theme_override_fonts/font = ExtResource("3_vjru3")
 text = "Reset to default"
 
