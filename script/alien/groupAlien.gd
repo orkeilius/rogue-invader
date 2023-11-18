@@ -47,7 +47,11 @@ func _process(delta):
 		find_parent("gameInfo").nextLevel()
 		return
 
-	if (20 - getChildPosX().min() >  position.x) or (position.x + getChildPosX().max() > 570):
+	if (20 - getChildPosX().min() >  position.x):
 		position.y += 20
-		direction *= -1
+		direction = 1
+
+	if (position.x + getChildPosX().max() > 570):
+		position.y += 20
+		direction = -1
 	
