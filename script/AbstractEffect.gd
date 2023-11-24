@@ -16,12 +16,15 @@ func addLevel(addedLevel):
     applyLevelUp(addedLevel)
 
 
-func _init(entity_: AbstractEffectEntity):
-    ## call when initated
+func _init(entity_: AbstractEffectEntity):   
     entity = entity_
+    applyInit()
 
+func applyInit():
+    ## call when initated
+    pass
 
-func applyLevelUp(addedLevel):
+func applyLevelUp(addedLevel : int):
     ## call when level is updated
     pass 
 

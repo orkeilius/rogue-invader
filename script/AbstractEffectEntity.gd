@@ -28,6 +28,7 @@ func generateBullet()-> Bullet:
 	#	that why we make new bullet instead of duplicate it
 	var bullet = bulletObject.instantiate()
 	bullet.origin = origin
+	bullet.global_position = global_position
 	for effect in effects :
 		effect.applyBallEffect(bullet)
 
