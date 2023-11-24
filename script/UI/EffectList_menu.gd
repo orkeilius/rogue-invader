@@ -20,6 +20,7 @@ func _ready():
 	find_child("effect1").text = buttonList[0].name
 	find_child("effect2").text = buttonList[1].name
 	find_child("effect3").text = buttonList[2].name
+	find_child("effect1").grab_focus()
 		
 func choose(value:int):
 	globalData.player.addEffects([buttonList[value]])

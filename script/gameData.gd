@@ -7,7 +7,7 @@ signal data_ready
 var level = 1
 var score = 0
 var action = ""
-var highscore = [{name:"",score:0}]
+var highscore = [{"name":"","score":0}]
 var player : Node2D = null
 
 
@@ -23,8 +23,8 @@ func query_score():
 	var dbtask : DatabaseTask = await Supabase.database.query(e).completed
 	if dbtask.data == null:
 		print("error : ",dbtask.error)
-		return
-	highscore = dbtask.data
+	else:
+		highscore = dbtask.data
 
 func set_score(username:String,newScore:int):
 	## send score to db

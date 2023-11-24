@@ -54,9 +54,9 @@ func _process(delta):
 	if (20 - getChildPosX().min() >  position.x):
 		position.y += 20
 		direction = 1
+		position.x += delta * direction * currentSpeed
 
-	if (position.x + getChildPosX().max() > 570):
+	elif (position.x + getChildPosX().max() > 570):
 		position.y += 20
 		direction = -1
-
-	position.x += delta * direction * currentSpeed
+		position.x += delta * direction * currentSpeed

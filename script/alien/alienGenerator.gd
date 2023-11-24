@@ -14,7 +14,6 @@ func _ready():
 
 	while point > 0:
 		var val = randi_range(0,len(enemieData) -1)
-		print(val)
 		point -= enemieData[val].cost
 		enemielevel[val] += 1
 	
