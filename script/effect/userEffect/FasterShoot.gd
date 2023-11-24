@@ -5,7 +5,7 @@ const name = "faster speed"
 var previousSpeed = 1
 
 func setSpeed():
-	var newSpeed =  0.5 ** level
+	var newSpeed =  0.7 ** level
 
 	entity.shootTimeout *= 1/ previousSpeed
 	entity.shootTimeout *= newSpeed
