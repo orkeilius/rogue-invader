@@ -63,7 +63,7 @@ call to add effect to bullet before shoot
 func applyBallEffect(bullet:Bullet):
 	bullet.pierce += level * 2
 ```
-        
+		
 ### onShoot() :
 call when shooting
 

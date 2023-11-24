@@ -9,7 +9,7 @@ var isStunt = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	addEffects([ShotUp,MoveNormal])
+	addEffects([ShootUp,MoveNormal])
 	origin = "player"
 	pass # Replace with function body.
 

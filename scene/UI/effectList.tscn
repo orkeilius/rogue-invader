@@ -1,6 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://dii4mpoe42tbi"]
+[gd_scene load_steps=6 format=3 uid="uid://dii4mpoe42tbi"]
 
 [ext_resource type="Script" path="res://script/UI/EffectList_menu.gd" id="1_isjat"]
+[ext_resource type="Shader" path="res://scene/UI/main_menu.gdshader" id="2_hnwhm"]
+[ext_resource type="Texture2D" uid="uid://cey287ip07kv0" path="res://scene/UI/bg_menu.png" id="3_l3a41"]
+[ext_resource type="Theme" uid="uid://rra5yvnwjanv" path="res://ui/themes_main.tres" id="4_qk4se"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jk82q"]
+shader = ExtResource("2_hnwhm")
 
 [node name="effectList" type="Control"]
 layout_mode = 3
@@ -10,6 +16,12 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_isjat")
+
+[node name="bg_menu" type="Sprite2D" parent="."]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_jk82q")
+position = Vector2(299, 352)
+texture = ExtResource("3_l3a41")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -28,14 +40,17 @@ alignment = 1
 
 [node name="effect1" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("4_qk4se")
 text = "effect"
 
 [node name="effect2" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("4_qk4se")
 text = "effect"
 
 [node name="effect3" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("4_qk4se")
 text = "effect"
 
 [connection signal="pressed" from="VBoxContainer/effect1" to="." method="Effect1"]
