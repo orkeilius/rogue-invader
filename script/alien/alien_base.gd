@@ -1,4 +1,5 @@
 extends AbstractEffectEntity
+## basic alien, use in groupAlien
 
 @export var spriteSpeed = 1
 @export var sprite_variante: int 
@@ -7,7 +8,8 @@ extends AbstractEffectEntity
 @onready var _AnimatedSprite2D = $AnimatedSprite2D
 var currentShootTimeout = 0
 var player = null
-# Called when the node enters the scene tree for the first time.
+
+
 func _ready():
 	await find_parent("gameInfo").ready
 	player = find_parent("gameInfo").get_node("PlayerClassic")

@@ -1,4 +1,5 @@
 extends AbstractEffectEntity
+## player maybe rework for rogue later
 
 @export var edgeLimit : int = 10
 @onready var gameScene = find_parent("gameInfo")

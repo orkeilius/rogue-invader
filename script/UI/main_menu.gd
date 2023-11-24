@@ -1,5 +1,5 @@
 extends Control
-
+## main menu
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -7,6 +7,7 @@ func _ready():
 
 func _on_play_button_pressed():
 	get_node("/root/GameData").level = 0
+	get_node("/root/GameData").player = null
 	get_tree().change_scene_to_file("res://scene/UI/effectList.tscn")
 
 func _on_space_invaders_button_pressed():

@@ -1,4 +1,5 @@
 extends Control
+## highscore menu
 
 @onready var globalData = get_node("/root/GameData")
 

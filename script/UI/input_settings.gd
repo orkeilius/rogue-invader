@@ -1,4 +1,5 @@
 extends Control
+## input setting menu
 
 @onready var input_button_scene = preload("res://scene/UI/Input Settings/input_button.tscn")
 @onready var action_list = $PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/ActionList

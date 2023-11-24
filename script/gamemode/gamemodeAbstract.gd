@@ -1,4 +1,6 @@
 class_name gamemodeAbstract extends Node
+## abstract gamemode use to share gamemode logic
+
 
 @onready var globalData :GameData = get_node("/root/GameData")
 

@@ -1,24 +1,28 @@
 extends Node2D
+## singleton to generate alien
+##
+## it use the nb level to set cost and res of each alien
 
-
-var enemieLevel =[ 
-	{object= load("res://object/alien/groupAlien.tscn") ,level = 0,cost = 11}
+const enemieData =[ 
+	{object= "res://object/alien/groupAlien.tscn" ,cost = 11}
 ]
+var enemielevel = [0]
 
 func _ready():
 	var level = get_node("/root/GameData").level 
 	var point = level * 5 + 50
 
 	while point > 0:
-		var val = randi_range(0,len(enemieLevel) -1)
-		point -= enemieLevel[val].cost
-		enemieLevel[val].level += 1
+		var val = randi_range(0,len(enemieData) -1)
+		print(val)
+		point -= enemieData[val].cost
+		enemielevel[val] += 1
 	
-	for enemie in enemieLevel:
-		if enemie["level"] == 0:
+	for nb in range(len(enemieData)):
+		if enemielevel[nb] == 0:
 			continue
 			
-		var object = enemie["object"].instantiate()
-		object.level = enemie["level"]
+		var object = load(enemieData[nb].object).instantiate()
+		object.level = enemielevel[nb]
 		add_child(object)
 		
