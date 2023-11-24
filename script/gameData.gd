@@ -1,4 +1,6 @@
 extends Node
+## auto load singleton to save data and dbconnection
+
 
 signal data_ready
 
@@ -9,18 +11,14 @@ var highscore = [{name:"",score:0}]
 var player : Node2D = null
 
 
-# Called when the node enters the scene tree for the first time.
+
 func _ready():
 	await Supabase.ready
 	await query_score()
 	data_ready.emit()
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
 func query_score():
+	## query score from db
 	var e = SupabaseQuery.new().from("highscore").select().order("score",1).range(0,10)
 	var dbtask : DatabaseTask = await Supabase.database.query(e).completed
 	if dbtask.data == null:
@@ -28,8 +26,9 @@ func query_score():
 		return
 	highscore = dbtask.data
 
-func set_score(name:String,newScore:int):
-	var e = SupabaseQuery.new().from("highscore").insert([{"name":name,"score":newScore}])
+func set_score(username:String,newScore:int):
+	## send score to db
+	var e = SupabaseQuery.new().from("highscore").insert([{"name":username,"score":newScore}])
 	var dbtask : DatabaseTask = await Supabase.database.query(e).completed	
 
 	if dbtask.error != null:

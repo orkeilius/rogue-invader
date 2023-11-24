@@ -1,5 +1,5 @@
 class_name ShootDown extends AbstractEffect
-
+## effect to shoot down
 const name = "shot down"
 
 

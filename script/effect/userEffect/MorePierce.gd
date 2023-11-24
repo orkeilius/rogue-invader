@@ -1,5 +1,5 @@
 class_name MorePierce extends AbstractEffect
-
+## effect to add more pierce
 
 const name = "more pierce"
 

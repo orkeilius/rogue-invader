@@ -1,4 +1,8 @@
 extends Node2D
+## basic alien group 
+##
+## the level add more alien
+
 
 var alien = load("res://object/alien/AlienBase.tscn")
 var direction = 1

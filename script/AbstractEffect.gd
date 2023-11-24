@@ -1,35 +1,38 @@
 class_name AbstractEffect
+## abstract class to make effect
 
-# you can only overwrite method in gdscript
-var level:int = 1 
+# note: you can only overwrite method in gdscript
+# const name
+
+## effect level
+var level:int = 1
 var entity: AbstractEffectEntity
 
-func _init(entity_: AbstractEffectEntity):
-    entity = entity_
-
-func info() -> Dictionary :
-    return {}
 
 func addLevel(addedLevel):
+    ## add level
+    ## don't overwrite
     level += addedLevel
     applyLevelUp(addedLevel)
 
+
+func _init(entity_: AbstractEffectEntity):
+    ## call when initated
+    entity = entity_
+
+
 func applyLevelUp(addedLevel):
-    #call when level is updated
+    ## call when level is updated
     pass 
 
-func onEffect():
-    # when effect is added
-    pass
-
 func applyBallEffect(bullet:Bullet):
-    # add effect to bullet before shoot
+    ## call to add effect to bullet before shoot
     pass
         
 func onShoot(emiter:Node2D) :
-    # when shoot
+    ## call when shooting
     pass      
 
 func moveBullet(speed:float,bullet:Bullet):
-    # bullet mouvement
+    ## call to handle bullet movement
     pass

@@ -1,4 +1,6 @@
 class_name  Bullet extends Node2D
+## script for projectile
+
 
 @export var sprite = load("res://sprite/bullet/bulletPlayer.tres")
 
