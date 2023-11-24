@@ -13,7 +13,7 @@ func _ready():
 	var point = level * 5 + 50
 
 	while point > 0:
-		var val = randi_range(0,len(enemieData) -1
+		var val = randi_range(0,len(enemieData) -1)
 		point -= enemieData[val].cost
 		enemielevel[val] += 1
 	
