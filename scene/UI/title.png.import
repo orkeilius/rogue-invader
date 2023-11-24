@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://08ibqx8ifatq"
-path="res://.godot/imported/effect_system.png-c50c145f87c2236473d05171034010d7.ctex"
+uid="uid://hvsa0bsskodw"
+path="res://.godot/imported/title.png-50b7ef6005146fb7c28c569519567c99.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://docs/asset/effect_system.png"
-dest_files=["res://.godot/imported/effect_system.png-c50c145f87c2236473d05171034010d7.ctex"]
+source_file="res://scene/UI/title.png"
+dest_files=["res://.godot/imported/title.png-50b7ef6005146fb7c28c569519567c99.ctex"]
 
 [params]
 
