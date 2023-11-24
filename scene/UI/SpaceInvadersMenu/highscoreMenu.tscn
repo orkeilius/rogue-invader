@@ -1,10 +1,10 @@
 [gd_scene load_steps=7 format=3 uid="uid://bl66l48dnib7v"]
 
 [ext_resource type="Script" path="res://script/UI/highscore_menu.gd" id="1_c2kek"]
-[ext_resource type="FontFile" uid="uid://bpd1f760foopi" path="res://Fonts/space_invaders.ttf" id="2_dp7kq"]
+[ext_resource type="FontFile" uid="uid://bpd1f760foopi" path="res://ui/fonts/space_invaders.ttf" id="2_dp7kq"]
 [ext_resource type="Shader" path="res://scene/UI/main_menu.gdshader" id="2_s78hw"]
 [ext_resource type="Texture2D" uid="uid://cey287ip07kv0" path="res://scene/UI/bg_menu.png" id="3_d1j7g"]
-[ext_resource type="LabelSettings" uid="uid://c04onmpcjccqr" path="res://Fonts/labelSettingsHud.tres" id="3_p2p3t"]
+[ext_resource type="LabelSettings" uid="uid://c04onmpcjccqr" path="res://ui/fonts/labelSettingsHud.tres" id="3_p2p3t"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_pdoyq"]
 shader = ExtResource("2_s78hw")

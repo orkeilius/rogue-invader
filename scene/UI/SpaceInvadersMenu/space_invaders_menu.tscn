@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://coey72iys8r5e" path="res://scene/UI/SpaceInvadersMenu/space_invaders_hud.tscn" id="1_bafm7"]
 [ext_resource type="Script" path="res://script/UI/space_invaders_menu.gd" id="1_u1p53"]
-[ext_resource type="FontFile" uid="uid://bpd1f760foopi" path="res://Fonts/space_invaders.ttf" id="2_ey86j"]
+[ext_resource type="FontFile" uid="uid://bpd1f760foopi" path="res://ui/fonts/space_invaders.ttf" id="2_ey86j"]
 
 [node name="SpaceInvadersMenu" type="Control"]
 layout_mode = 3

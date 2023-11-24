@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://coey72iys8r5e"]
 
-[ext_resource type="FontFile" uid="uid://bpd1f760foopi" path="res://Fonts/space_invaders.ttf" id="1_gp4mf"]
-[ext_resource type="LabelSettings" uid="uid://c04onmpcjccqr" path="res://Fonts/labelSettingsHud.tres" id="2_gplus"]
+[ext_resource type="FontFile" uid="uid://bpd1f760foopi" path="res://ui/fonts/space_invaders.ttf" id="1_gp4mf"]
+[ext_resource type="LabelSettings" uid="uid://c04onmpcjccqr" path="res://ui/fonts/labelSettingsHud.tres" id="2_gplus"]
 
 [node name="SpaceInvadersHUD" type="Control"]
 layout_mode = 3
