@@ -1,4 +1,5 @@
 extends TileMap
+## colision for the green line
 
 func collide(pos:Vector2,size = 12):
 	for cell in get_used_cells(0):

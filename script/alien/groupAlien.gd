@@ -1,8 +1,12 @@
 extends Node2D
+## basic alien group 
+##
+## the level add more alien
+
 
 var alien = load("res://object/alien/AlienBase.tscn")
 var direction = 1
-@export var level = -11
+@export var level = -1
 @export var speed :float
 @export var speedBoost: float
 
@@ -47,7 +51,12 @@ func _process(delta):
 		find_parent("gameInfo").nextLevel()
 		return
 
-	if (20 - getChildPosX().min() >  position.x) or (position.x + getChildPosX().max() > 570):
+	if (20 - getChildPosX().min() >  position.x):
 		position.y += 20
-		direction *= -1
-	
+		direction = 1
+
+	if (position.x + getChildPosX().max() > 570):
+		position.y += 20
+		direction = -1
+
+	position.x += delta * direction * currentSpeed

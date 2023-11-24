@@ -1,14 +1,15 @@
 class_name FasterShoot extends AbstractEffect
+## effect to shoot faster
 
 const name = "faster speed"
 
 var previousSpeed = 1
 
 func setSpeed():
-	var newSpeed =  0.9 ** level
+	var newSpeed =  0.7 ** level
 
-	entity.speed *= 1/ previousSpeed
-	entity.speed *= newSpeed
+	entity.shootTimeout *= 1/ previousSpeed
+	entity.shootTimeout *= newSpeed
 
 	previousSpeed = newSpeed
 

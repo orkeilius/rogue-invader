@@ -1,4 +1,5 @@
 extends Control
+## effect list menu
 
 var _listOfGivableItem = listOfGivableItem.new()
 var buttonList = []
