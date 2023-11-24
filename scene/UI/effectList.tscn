@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://dii4mpoe42tbi"]
 
 [ext_resource type="Script" path="res://script/UI/EffectList_menu.gd" id="1_isjat"]
-[ext_resource type="Shader" path="res://scene/UI/main_menu.gdshader" id="2_hnwhm"]
-[ext_resource type="Texture2D" uid="uid://cey287ip07kv0" path="res://scene/UI/bg_menu.png" id="3_l3a41"]
+[ext_resource type="Shader" path="res://ui/menu/main_menu.gdshader" id="2_hnwhm"]
+[ext_resource type="Texture2D" uid="uid://cey287ip07kv0" path="res://ui/menu/bg_menu.png" id="3_l3a41"]
 [ext_resource type="Theme" uid="uid://rra5yvnwjanv" path="res://ui/themes_main.tres" id="4_qk4se"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_jk82q"]
