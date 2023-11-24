@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://script/UI/space_invaders_tuto.gd" id="1_r726y"]
 [ext_resource type="PackedScene" uid="uid://coey72iys8r5e" path="res://scene/UI/SpaceInvadersMenu/space_invaders_hud.tscn" id="1_tk12x"]
-[ext_resource type="FontFile" uid="uid://bpd1f760foopi" path="res://Fonts/space_invaders.ttf" id="2_ketne"]
+[ext_resource type="FontFile" uid="uid://bpd1f760foopi" path="res://ui/fonts/space_invaders.ttf" id="2_ketne"]
 [ext_resource type="SpriteFrames" uid="uid://dmq0wybtftcj4" path="res://sprite/alien/boss.tres" id="4_7ft8i"]
 [ext_resource type="SpriteFrames" uid="uid://ci355dhr0idk1" path="res://sprite/alien/base0.tres" id="4_77rde"]
 [ext_resource type="SpriteFrames" uid="uid://b0lmji7fy1rkh" path="res://sprite/alien/base2.tres" id="4_rjl64"]

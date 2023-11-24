@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" path="res://script/UI/input_settings.gd" id="1_1c254"]
 [ext_resource type="PackedScene" uid="uid://dhg1q8rvyaafy" path="res://scene/UI/Input Settings/input_button.tscn" id="1_ofpi5"]
-[ext_resource type="Shader" path="res://scene/UI/main_menu.gdshader" id="2_r7bhb"]
-[ext_resource type="Texture2D" uid="uid://cey287ip07kv0" path="res://scene/UI/bg_menu.png" id="3_ey5dg"]
-[ext_resource type="FontFile" uid="uid://bpd1f760foopi" path="res://Fonts/space_invaders.ttf" id="3_vjru3"]
+[ext_resource type="Shader" path="res://ui/menu/main_menu.gdshader" id="2_r7bhb"]
+[ext_resource type="Texture2D" uid="uid://cey287ip07kv0" path="res://ui/menu/bg_menu.png" id="3_ey5dg"]
+[ext_resource type="FontFile" uid="uid://bpd1f760foopi" path="res://ui/fonts/space_invaders.ttf" id="3_vjru3"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_fnhwn"]
 shader = ExtResource("2_r7bhb")
