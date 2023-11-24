@@ -62,8 +62,7 @@ call to add effect to bullet before shoot
 ```gdscript
 func applyBallEffect(bullet:Bullet):
 	bullet.pierce += level * 2
-```
-        
+```	
 ### onShoot() :
 call when shooting
 

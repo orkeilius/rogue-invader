@@ -1,8 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://bl66l48dnib7v"]
+[gd_scene load_steps=7 format=3 uid="uid://bl66l48dnib7v"]
 
 [ext_resource type="Script" path="res://script/UI/highscore_menu.gd" id="1_c2kek"]
 [ext_resource type="FontFile" uid="uid://bpd1f760foopi" path="res://Fonts/space_invaders.ttf" id="2_dp7kq"]
+[ext_resource type="Shader" path="res://scene/UI/main_menu.gdshader" id="2_s78hw"]
+[ext_resource type="Texture2D" uid="uid://cey287ip07kv0" path="res://scene/UI/bg_menu.png" id="3_d1j7g"]
 [ext_resource type="LabelSettings" uid="uid://c04onmpcjccqr" path="res://Fonts/labelSettingsHud.tres" id="3_p2p3t"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pdoyq"]
+shader = ExtResource("2_s78hw")
 
 [node name="highscoreMenu" type="Control"]
 layout_mode = 3
@@ -12,6 +17,12 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_c2kek")
+
+[node name="bg_menu" type="Sprite2D" parent="."]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_pdoyq")
+position = Vector2(299, 352)
+texture = ExtResource("3_d1j7g")
 
 [node name="menu" type="Control" parent="."]
 anchors_preset = 0
