@@ -10,7 +10,7 @@ var bulletObject = load("res://object/bullet.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	addEffects([ShootUp,MoveNormal])
+	addEffects([ShotUp,MoveNormal])
 	origin = "player"
 	pass # Replace with function body.
 
