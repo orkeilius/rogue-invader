@@ -1,4 +1,8 @@
 extends Node2D
+## basic alien group 
+##
+## the level add more alien
+
 
 var alien = load("res://object/alien/AlienBase.tscn")
 var direction = 1
@@ -50,8 +54,9 @@ func _process(delta):
 	if (20 - getChildPosX().min() >  position.x):
 		position.y += 20
 		direction = 1
+		position.x += delta * direction * currentSpeed
 
-	if (position.x + getChildPosX().max() > 570):
+	elif (position.x + getChildPosX().max() > 570):
 		position.y += 20
 		direction = -1
-	
+		position.x += delta * direction * currentSpeed

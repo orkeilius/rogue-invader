@@ -1,4 +1,6 @@
 extends gamemodeAbstract
+## gamemode for rogueInvaders
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

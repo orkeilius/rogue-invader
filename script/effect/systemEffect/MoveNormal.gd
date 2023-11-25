@@ -1,5 +1,5 @@
 class_name MoveNormal extends AbstractEffect
-
+## effect use to move bullet forward
 
 const name = "move normal"
 

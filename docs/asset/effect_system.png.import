@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://k2tjnhr5iydj"
-path="res://.godot/imported/360_F_251226152_8DMd30Kn5ymCu2mjRUi7lYG4uj02VDmU.jpg-18a0b2429e3c323eef1fa820a6f326b5.ctex"
+uid="uid://08ibqx8ifatq"
+path="res://.godot/imported/effect_system.png-c50c145f87c2236473d05171034010d7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprite/360_F_251226152_8DMd30Kn5ymCu2mjRUi7lYG4uj02VDmU.jpg"
-dest_files=["res://.godot/imported/360_F_251226152_8DMd30Kn5ymCu2mjRUi7lYG4uj02VDmU.jpg-18a0b2429e3c323eef1fa820a6f326b5.ctex"]
+source_file="res://docs/asset/effect_system.png"
+dest_files=["res://.godot/imported/effect_system.png-c50c145f87c2236473d05171034010d7.ctex"]
 
 [params]
 

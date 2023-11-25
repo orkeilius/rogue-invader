@@ -1,4 +1,6 @@
 class_name wall extends TileMap
+## colision for the wall
+
 
 func collide(pos:Vector2,explode:bool,size = 6):
 	for cell in get_used_cells(0):
