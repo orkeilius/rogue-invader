@@ -46,6 +46,4 @@ func _on_back_button_pressed():
 
 func _on_back_switch_pressed():
 	gamemode = (gamemode + 1) %2
-	print(gamemode)
-	print(globalData.highscore[gamemode])
 	show_score()
