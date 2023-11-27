@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://bl66l48dnib7v"]
+[gd_scene load_steps=8 format=3 uid="uid://bl66l48dnib7v"]
 
 [ext_resource type="Script" path="res://script/UI/highscore_menu.gd" id="1_c2kek"]
 [ext_resource type="FontFile" uid="uid://bpd1f760foopi" path="res://ui/fonts/space_invaders.ttf" id="2_dp7kq"]
 [ext_resource type="Shader" path="res://ui/menu/main_menu.gdshader" id="2_s78hw"]
 [ext_resource type="Texture2D" uid="uid://cey287ip07kv0" path="res://ui/menu/bg_menu.png" id="3_d1j7g"]
 [ext_resource type="LabelSettings" uid="uid://c04onmpcjccqr" path="res://ui/fonts/labelSettingsHud.tres" id="3_p2p3t"]
+[ext_resource type="Theme" uid="uid://rra5yvnwjanv" path="res://ui/themes_main.tres" id="6_7p3wf"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_pdoyq"]
 shader = ExtResource("2_s78hw")
@@ -297,6 +298,32 @@ theme_override_fonts/font = ExtResource("2_dp7kq")
 theme_override_font_sizes/font_size = 24
 text = "Back"
 
+[node name="switchButton" type="Button" parent="menu/scoremenu"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 475.0
+offset_top = 610.0
+offset_right = 585.0
+offset_bottom = 651.0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("2_dp7kq")
+theme_override_font_sizes/font_size = 24
+text = "switch"
+
+[node name="gamemode" type="Label" parent="menu/scoremenu"]
+layout_mode = 0
+offset_left = 200.0
+offset_top = 100.0
+offset_right = 400.0
+offset_bottom = 125.0
+theme = ExtResource("6_7p3wf")
+theme_override_fonts/font = ExtResource("2_dp7kq")
+theme_override_font_sizes/font_size = 20
+horizontal_alignment = 1
+
 [node name="nameMenu" type="VBoxContainer" parent="menu"]
 layout_mode = 0
 offset_left = 200.0
@@ -333,3 +360,4 @@ theme_override_font_sizes/font_size = 32
 text = "Highscore"
 
 [connection signal="pressed" from="menu/scoremenu/backButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="menu/scoremenu/switchButton" to="." method="_on_back_switch_pressed"]

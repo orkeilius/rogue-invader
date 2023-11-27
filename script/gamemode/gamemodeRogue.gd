@@ -7,8 +7,9 @@ func _ready():
 	globalData.player.position = Vector2(300,635)
 	add_child(globalData.player.duplicate())
 
-	find_child("HighScore").text = "%05d" % globalData.highscore[0].score
+	find_child("HighScore").text = "%05d" % globalData.highscore[1][0].score
 	_set_score(globalData.score)
+	globalData.gamemode = 1
 
 func nextLevel():
 	globalData.level += 1
