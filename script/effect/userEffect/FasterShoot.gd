@@ -14,8 +14,7 @@ func setSpeed():
 	previousSpeed = newSpeed
 
 
-func _init(entity_: AbstractEffectEntity):
-	super._init(entity_)
+func applyInit():
 	setSpeed()
 
 
