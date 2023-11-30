@@ -4,7 +4,7 @@ const name = "corner shot"
 
 var i = 0
 
-func onShoot(entity:Node2D):
+func onShoot():
 	if i == 0:
 		var bullet = entity.generateBullet()
 		bullet.rotation_degrees = 45

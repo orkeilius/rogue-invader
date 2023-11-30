@@ -5,15 +5,7 @@ class_name AbstractEffect
 # const name
 
 ## effect level
-var level:int = 1
 var entity: AbstractEffectEntity
-
-
-func addLevel(addedLevel):
-    ## add level
-    ## don't overwrite
-    level += addedLevel
-    applyLevelUp(addedLevel)
 
 
 func _init(entity_: AbstractEffectEntity):   
@@ -32,7 +24,7 @@ func applyBallEffect(bullet:Bullet):
     ## call to add effect to bullet before shoot
     pass
         
-func onShoot(emiter:Node2D) :
+func onShoot() :
     ## call when shooting
     pass      
 

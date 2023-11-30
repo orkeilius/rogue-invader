@@ -3,27 +3,15 @@ class_name MachineGun extends AbstractEffect
 
 const name = "machine gun"
 
-var previousSpeed = 1
 var set = false
 
-func setValue():
-	var newSpeed =  0.4 ** level
-
-	entity.shootTimeout *= 1/ previousSpeed
-	entity.shootTimeout *= newSpeed
-
-	previousSpeed = newSpeed
-
-
 func applyInit():
-	setValue()
-
-func applyLevelUp(_level):
-	setValue()
+	if entity != null:
+		entity.shootTimeout *=  0.4
 
 func applyBallEffect(bullet:Bullet):
 	# add effect to bullet before shoot
-	bullet.effects.append(MachineGun.new(entity))
+	bullet.effects.append(MachineGun.new(null))
 
 func moveBullet(speed:float,bullet:Bullet):
 	if !set :

@@ -4,6 +4,6 @@ class_name MorePierce extends AbstractEffect
 const name = "more pierce"
 
 func applyBallEffect(bullet:Bullet):
-	bullet.pierce += level * 2
+	bullet.pierce += 2
 
 
