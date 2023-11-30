@@ -7,13 +7,13 @@ var Effects = [
 	CornerShoot,
 	MorePierce,
 	FasterShoot,
-	ShootDown
+	MissileBullet
 ]
 
-#var Effects = [
-#    
+# var Effects = [
+   
 #    MorePierce,
 #    FasterShoot,
-#    ShootDown
-#
-#]
+#    MissileBullet
+
+# ]

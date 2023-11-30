@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://b0wi4mdmct85m"]
+
+[ext_resource type="Script" path="res://script/effect/EffectObject/Explosion.gd" id="1_2cxde"]
+[ext_resource type="SpriteFrames" uid="uid://decyshh46klki" path="res://sprite/alien/baseExplosion.tres" id="1_jis2c"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5wxhm"]
+
+[node name="Explosion" type="Area2D" groups=["bullet"]]
+scale = Vector2(2, 2)
+script = ExtResource("1_2cxde")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_5wxhm")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+modulate = Color(1, 0.188235, 0.152941, 1)
+texture_filter = 1
+position = Vector2(0, 2.38419e-07)
+scale = Vector2(1.38462, 1.25)
+sprite_frames = ExtResource("1_jis2c")
