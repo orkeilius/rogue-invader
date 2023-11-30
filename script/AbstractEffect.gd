@@ -39,3 +39,9 @@ func onShoot(emiter:Node2D) :
 func moveBullet(speed:float,bullet:Bullet):
     ## call to handle bullet movement
     pass
+
+func onBulletCollide(bullet:Bullet, colider:Area2D):
+    ## call when bullet touche something
+
+func onBulletDied(bullet:Bullet):
+    ## call when bullet is destroy
