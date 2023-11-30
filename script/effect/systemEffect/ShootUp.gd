@@ -3,7 +3,7 @@ class_name ShootUp extends AbstractEffect
 const name = "shoot up"
 
 
-func onShoot(entity:Node2D):
+func onShoot():
 	var bullet = entity.generateBullet()
 	bullet.rotation_degrees = 0
 	entity.find_parent("gameInfo").add_child(bullet)

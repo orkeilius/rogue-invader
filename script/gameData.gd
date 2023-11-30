@@ -13,7 +13,7 @@ var highscore = [
 ]
 var player : Node2D = null
 var gamemode = 0
-
+var givableItem = []
 
 func _ready():
 	await Supabase.ready

@@ -1,14 +1,12 @@
 extends Control
 ## effect list menu
-
-var _listOfGivableItem = listOfGivableItem.new()
 var buttonList = []
 
 @onready var globalData :GameData = get_node("/root/GameData")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	var effectList:Array = _listOfGivableItem.Effects
+	var effectList:Array = globalData.givableItem
 
 	if globalData.player == null:
 		var playerAsset = load("res://object/player/PlayerClassic.tscn")
@@ -23,6 +21,7 @@ func _ready():
 	find_child("effect1").grab_focus()
 		
 func choose(value:int):
+	globalData.givableItem.remove_at(globalData.givableItem.find(buttonList[value]))
 	globalData.player.addEffects([buttonList[value]])
 	get_tree().change_scene_to_file("res://scene/gameMode/gamemodeRogue.tscn")
 
