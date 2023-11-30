@@ -36,6 +36,7 @@ func generateBullet()-> Bullet:
 
 
 func call_shoot():
-	## shoot 
+	## shoot
 	for effect in effects :
-		effect.onShoot(self)
+		effect.entity = self # force update ref to entity
+		effect.onShoot()

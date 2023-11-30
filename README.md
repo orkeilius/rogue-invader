@@ -9,5 +9,4 @@ a school project remaking space invaders with rogue-like mechanic
 ## contributing
 
 there a list of "esay to add" thing to the game
- * **effect :**  see [how to make effect](docs/dev/effect.md)
- * **alien :** see (add alien page)
+ * **effect :**  see [how to make effect](docs/dev/how-to/effect.md)

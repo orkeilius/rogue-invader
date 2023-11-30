@@ -3,7 +3,7 @@
 an effect is a godot script who is call to apply different modification (exemple : change stat, move bullet or shoot in different angle)
 
 ## how the effect system work
-![](../asset/effect_system.png)
+![](../../asset/effect_system.png)
 
 0. the effect is set in the entity or listed in the list of givable item
 1. the effect is given to an entity in the entity code or in the effect menu
