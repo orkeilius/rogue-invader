@@ -42,6 +42,8 @@ func moveBullet(speed:float,bullet:Bullet):
 
 func onBulletCollide(bullet:Bullet, colider:Area2D):
     ## call when bullet touche something
+    pass
 
 func onBulletDied(bullet:Bullet):
     ## call when bullet is destroy
+    pass
