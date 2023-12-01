@@ -6,10 +6,7 @@ func _ready():
 	$VBoxContainer/PlayButton.grab_focus()
 	
 func _on_play_button_pressed():
-	get_node("/root/GameData").level = 0
-	get_node("/root/GameData").player = null
-	get_node("/root/GameData").givableItem = listOfGivableItem.new().Effects
-	get_tree().change_scene_to_file("res://scene/UI/effectList.tscn")
+	get_node("/root/GameData").launchGame("res://scene/UI/effectList.tscn")
 
 func _on_space_invaders_button_pressed():
 	get_tree().change_scene_to_file("res://scene/UI/SpaceInvadersMenu/space_invaders_menu.tscn")
