@@ -25,7 +25,7 @@ func _process(delta):
 	if Input.is_action_pressed("move_right") and (position.x + edgeLimit < ProjectSettings.get("display/window/size/viewport_width")) :
 		direction = 1
 	if Input.is_action_pressed("escape"):
-		get_tree().change_scene_to_file("res://scene/UI/SpaceInvadersMenu/space_invaders_menu.tscn")
+		get_tree().change_scene_to_file("res://scene/UI/main_menu.tscn")
 
 	position.x += direction * speed * delta 
 
