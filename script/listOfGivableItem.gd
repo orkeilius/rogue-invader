@@ -8,7 +8,8 @@ var Effects = [
 	FasterShoot,
 	MachineGun,
 	MissileBullet,
-	MorePierce
+	MorePierce,
+	Shield
 ]
 
 # var Effects = [
