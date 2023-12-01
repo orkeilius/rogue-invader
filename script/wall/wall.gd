@@ -3,6 +3,7 @@ class_name wall extends TileMap
 
 
 func collide(pos:Vector2,explode:bool,size = 6):
+	## destroy part of the wall
 	for cell in get_used_cells(0):
 		var cell_pos = Vector2(
 			cell.x * scale.x + global_position.x,
