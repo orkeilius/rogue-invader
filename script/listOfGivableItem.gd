@@ -3,12 +3,13 @@ class_name listOfGivableItem
 ## use to know what effect are givable to players
 
 var Effects = [
-	MachineGun,
+	BouncyBullet,
 	CornerShoot,
-	MorePierce,
 	FasterShoot,
+	MachineGun,
 	MissileBullet,
-	BouncyShoot
+	MorePierce,
+	Shield
 ]
 
 # var Effects = [

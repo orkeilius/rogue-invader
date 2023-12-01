@@ -1,6 +1,6 @@
-class_name BouncyShoot extends AbstractEffect
+class_name BouncyBullet extends AbstractEffect
 
-const name = "bouncy shoot"
+const name = "bouncy bullet"
 
 func applyBallEffect(bullet:Bullet):
 	# add effect to bullet before shoot
