@@ -15,13 +15,21 @@ var sizeY = 5
 var currentSpeed = 0
 @onready var basePosition = position
 
+var hpLevel = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	if level == -1:
-		get_node("/root/GameData").level 
+		position.y += get_node("/root/GameData").level * 10
 	else:
-		sizeY = level
+		sizeY = (level - 5 )% 5 + 5
+		var effectLevel = ceil((level - 5) /5)
+		var speedLevel = randi_range(0,effectLevel)
+		hpLevel = effectLevel - speedLevel
+
+		speed *= 1 + speedLevel * 0.75
+	 
+
 
 	for j in range(sizeY):
 		for i in range(sizeX):
@@ -29,6 +37,7 @@ func _ready():
 			newAlien.sprite_variante = floor( (j + 1 )/2 ) % 3
 			newAlien.position.x = 40 * i
 			newAlien.position.y = 45 * j
+			newAlien.hp += hpLevel
 			add_child(newAlien)
 
 
