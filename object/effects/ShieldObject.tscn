@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://bfjs1arkofnps"]
+
+[ext_resource type="Script" path="res://script/effect/userEffect/ShieldObject.gd" id="1_35i8w"]
+[ext_resource type="Texture2D" uid="uid://cnk2ccghu70l3" path="res://sprite/effects/shield.png" id="2_yw4a4"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vw1tg"]
+radius = 17.0294
+
+[node name="Shield" type="Area2D" groups=["player"]]
+script = ExtResource("1_35i8w")
+
+[node name="Shield" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_yw4a4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_vw1tg")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

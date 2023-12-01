@@ -3,8 +3,9 @@ class_name listOfGivableItem
 ## use to know what effect are givable to players
 
 var Effects = [
-    MorePierce,
-    FasterShoot,
-    ShootDown
+	MorePierce,
+	FasterShoot,
+	ShootDown,
+	Shield
 
 ]
