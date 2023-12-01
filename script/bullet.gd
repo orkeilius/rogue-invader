@@ -43,7 +43,6 @@ func _on_area_2d_area_entered(target : Area2D):
 		var newPierce = pierce - target.hp
 		target.hp -= pierce
 		pierce = newPierce
-		print("pierce:",pierce)
 		target.callUpdateBullet()
 
 	
