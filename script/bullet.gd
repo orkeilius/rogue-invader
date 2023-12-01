@@ -10,6 +10,7 @@ var speed = 350
 var pierce = 1
 var effects = []
 var origin = ""
+var doNotFree = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -23,8 +24,11 @@ func _process(delta):
 	for effect in effects :
 		effect.moveBullet(speed* delta,self)
 
-
 func delete_Bullet():
+	if doNotFree:
+		doNotFree = false
+		return
+
 	for effect in effects :
 		effect.onBulletDied(self)
 	call_deferred("free")
@@ -34,9 +38,14 @@ func _on_area_2d_area_entered(target : Area2D):
 		effect.onBulletCollide(self,target)
 
 	if target.is_in_group("alien") and origin != "alien":
-		pierce -= 1
-		if pierce == 0:
-			delete_Bullet()
+		if target.hp < 0:
+			return
+		var newPierce = pierce - target.hp
+		target.hp -= pierce
+		pierce = newPierce
+		print("pierce:",pierce)
+		target.callUpdateBullet()
+
 	
 	elif target.is_in_group("bullet") and origin != target.origin:
 		speed = 0
@@ -50,8 +59,18 @@ func _on_area_2d_area_entered(target : Area2D):
 	elif target.is_in_group("player") and origin != "player":
 		delete_Bullet()
 	
+	if pierce <= 0:
+		delete_Bullet()
+
 func _on_body_entered(body):
+	for effect in effects :
+		effect.onBulletCollide(self,body)
+
 	if body.is_in_group("wall"):
 		body.collide(global_position,true)
 		delete_Bullet()
+	
+	if pierce <= 0:
+		delete_Bullet()
+
  

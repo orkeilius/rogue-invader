@@ -8,6 +8,7 @@ extends AbstractEffectEntity
 @onready var _AnimatedSprite2D = $AnimatedSprite2D
 var currentShootTimeout = 0
 var player = null
+var dead = false
 
 
 func _ready():
@@ -42,22 +43,33 @@ func _process(delta):
 
 		
 func _on_area_2d_area_entered(target : Area2D):
-	if target.is_in_group("bullet") and not (target.origin == "alien"):
+	#if target.is_in_group("bullet") and not (target.origin == "alien"):
+	pass
 		
+func callUpdateBullet(): 
+	if dead:
+		return
+	## call to update when hit by bullet
+	# note : bullet and alien intercation are managed on the bullet to avoid un-synced bullet pierce and alien hp state
+	if hp > 0:
+		var oldColor = _AnimatedSprite2D.modulate  
+		_AnimatedSprite2D.modulate = Color(255,0,0)
+		await get_tree().create_timer(0.25).timeout
+		_AnimatedSprite2D.modulate = oldColor
+	
+	else:
+		dead = true
 		find_parent("gameInfo").score +=  (3 - sprite_variante) * 10
 		set_deferred("monitorable",false)
 		set_deferred("monitoring",false)
-
 		_AnimatedSprite2D.sprite_frames = load('res://sprite/alien/baseExplosion.tres')
 		var new_parent = find_parent("gameInfo")
-		var pos = global_position
+		position = global_position
+
 		get_parent().call_deferred("remove_child",self)
 		new_parent.call_deferred("add_child",self)
-		set_deferred("global_position",pos)
-		
 		await get_tree().create_timer(0.25).timeout
 		call_deferred("free")
-
 
 func _on_body_entered(body):
 	if body.is_in_group("wall"):

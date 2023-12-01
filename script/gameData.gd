@@ -20,6 +20,13 @@ func _ready():
 	await query_score()
 	data_ready.emit()
 
+func launchGame(scene : String):
+	score = 0
+	level = 0
+	player = null
+	givableItem = listOfGivableItem.new().Effects
+	get_tree().change_scene_to_file(scene)
+
 func query_score():
 	## query score from db
 	for i in range(2):
