@@ -10,6 +10,7 @@ class_name AbstractEffectEntity extends Area2D
 ## entity setting that can be change by effect
 @export var shootTimeout : float = 1.25
 @export var speed : float = 30
+@export var hp : float = 1
 
 var bulletObject = load("res://object/bullet.tscn")
 

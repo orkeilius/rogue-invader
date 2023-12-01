@@ -7,7 +7,7 @@ class_name  Bullet extends Node2D
 @onready var _AnimatedSprite2D = $AnimatedSprite2D
 @onready var gameScene = find_parent("gameInfo")
 var speed = 350
-var pierce = 2
+var pierce = 1
 var effects = []
 var origin = ""
 var doNotFree = false
@@ -38,8 +38,14 @@ func _on_area_2d_area_entered(target : Area2D):
 		effect.onBulletCollide(self,target)
 
 	if target.is_in_group("alien") and origin != "alien":
-		pierce -= 1
-		
+		if target.hp < 0:
+			return
+		var newPierce = pierce - target.hp
+		target.hp -= pierce
+		pierce = newPierce
+		print("pierce:",pierce)
+		target.callUpdateBullet()
+
 	
 	elif target.is_in_group("bullet") and origin != target.origin:
 		speed = 0
