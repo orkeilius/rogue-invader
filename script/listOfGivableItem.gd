@@ -7,7 +7,8 @@ var Effects = [
 	CornerShoot,
 	MorePierce,
 	FasterShoot,
-	MissileBullet
+	MissileBullet,
+	BouncyShoot
 ]
 
 # var Effects = [

@@ -32,7 +32,7 @@ func moveBullet(speed:float,bullet:Bullet):
     ## call to handle bullet movement
     pass
 
-func onBulletCollide(bullet:Bullet, colider:Area2D):
+func onBulletCollide(bullet:Bullet, colider:Node2D):
     ## call when bullet touche something
     pass
 
