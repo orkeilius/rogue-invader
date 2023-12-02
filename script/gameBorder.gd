@@ -6,4 +6,4 @@ extends Area2D
 @onready var greenLine = find_child("greenLine")
 
 func _on_area_entered(area):
-	greenLine.collide(area.global_position)
+	greenLine.collide(area.global_position,6,"greenLine")

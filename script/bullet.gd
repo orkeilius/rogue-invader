@@ -66,7 +66,7 @@ func _on_body_entered(body):
 		effect.onBulletCollide(self,body)
 
 	if body.is_in_group("wall"):
-		body.collide(global_position,true)
+		body.collide(global_position,6,"wall",true)
 		delete_Bullet()
 	
 	if pierce <= 0:

@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://behuxm1brfvdl"]
 
 [ext_resource type="TileSet" uid="uid://bumob42f7gddr" path="res://sprite/wall/wallClasic.tres" id="1_8x501"]
-[ext_resource type="Script" path="res://script/wall/greenLine.gd" id="2_up5qr"]
+[ext_resource type="Script" path="res://script/wall.gd" id="2_up5qr"]
 
 [node name="greenLine" type="TileMap"]
 scale = Vector2(3, 3)
