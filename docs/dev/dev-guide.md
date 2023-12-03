@@ -58,13 +58,14 @@ since godot use a object system with script attach, we will list script group by
 #### gamemode
   
 
-#### effect system
-- abstract effect
+#### [effect system](<script/effect system/effect system.md>)
+- [abstract effect](<script/effect system/abstract effect.md>)
 - list of givable item
 
-#### wall
+
 
 #### other game script
+- wall
 - abstract effect entity
 - autoload game data
 - player 
@@ -72,3 +73,4 @@ since godot use a object system with script attach, we will list script group by
 - 
 
 #### menu related
+- effect menu
