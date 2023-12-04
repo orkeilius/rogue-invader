@@ -51,9 +51,10 @@ the project is organise like this:
 ## code structure
 since godot use a object system with script attach, we will list script group by related object/scene
 #### alien
-- alien group
-- basic alien
-- alien generator
+- [alien group](<script/alien/group alien.md>)
+- [basic alien](<script/alien/base alien.md>)
+- [alien generator](<script/alien/alien generator.md>)
+- [boss alien](<script/alien/boss alien.md>)
 
 #### gamemode
   
