@@ -56,22 +56,21 @@ since godot use a object system with script attach, we will list script group by
 - [alien generator](<script/alien/alien generator.md>)
 - [boss alien](<script/alien/boss alien.md>)
 
-#### gamemode
-  
-
-#### [effect system](<script/effect system/effect system.md>)
+#### effect system
+- [*how the effect system work*](<script/effect system/effect system.md>)
 - [abstract effect](<script/effect system/abstract effect.md>)
-- list of givable item
+- [list of givable item](<script/effect system/list of givable item.md>)
 
 
 
 #### other game script
-- wall
-- abstract effect entity
-- autoload game data
-- player 
-- bullet
-- 
+- [abstract effect entity](<script/other/abtract effect entity.md>)
+- [autoload game data](script/other/gameData.md)
+- [bullet](script/other/bullet.md)
+- [gamemode classic](script/other/gamemode.md)
+- [player](script/other/player.md)
+- [wall](script/other/wall.md)
+
 
 #### menu related
-- effect menu
+- [effect menu](<script/menu/effect menu.md>)

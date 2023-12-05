@@ -24,7 +24,7 @@ func _process(delta):
 	for effect in effects :
 		effect.moveBullet(speed* delta,self)
 
-func delete_Bullet():
+func deleteBullet():
 	if doNotFree:
 		doNotFree = false
 		return
@@ -50,16 +50,16 @@ func _on_area_2d_area_entered(target : Area2D):
 		speed = 0
 		_AnimatedSprite2D.sprite_frames = load("res://sprite/bullet/bulletExplosion.tres")
 		await get_tree().create_timer(0.25).timeout
-		delete_Bullet()
+		deleteBullet()
 		
 	elif target.name == "gameBorder":
-		delete_Bullet()
+		deleteBullet()
 
 	elif target.is_in_group("player") and origin != "player":
-		delete_Bullet()
+		deleteBullet()
 	
 	if pierce <= 0:
-		delete_Bullet()
+		deleteBullet()
 
 func _on_body_entered(body):
 	for effect in effects :
@@ -67,9 +67,9 @@ func _on_body_entered(body):
 
 	if body.is_in_group("wall"):
 		body.collide(global_position,6,"wall",true)
-		delete_Bullet()
+		deleteBullet()
 	
 	if pierce <= 0:
-		delete_Bullet()
+		deleteBullet()
 
  

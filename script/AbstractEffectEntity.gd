@@ -22,6 +22,12 @@ func addEffects(EffectList:Array):
 	for elem in EffectList:
 		effects.append(elem.new(self))
 
+func call_shoot():
+	## shoot
+	for effect in effects :
+		effect.entity = self # force update ref to entity
+		effect.onShoot()
+
 func generateBullet()-> Bullet: 
 	## generate a bullet to be lanch
 
@@ -34,10 +40,3 @@ func generateBullet()-> Bullet:
 		effect.applyBallEffect(bullet)
 
 	return bullet
-
-
-func call_shoot():
-	## shoot
-	for effect in effects :
-		effect.entity = self # force update ref to entity
-		effect.onShoot()
