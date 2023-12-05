@@ -7,9 +7,9 @@ That won't explain stuff like scene (ex: menu script/scene).
 
 ### technologies  
 
-- [**Godot**](https://godotengine.org/) : Godot is an open-source game engine, we use it because it light and support web and have a similar syntax a python.
-- [**Supabase**](https://supabase.com/) : a Backend as a service who make db very simple and fast to make. That a paid service but the free tier is enough for the project.
-- [**Itchio**](https://itch.io/) ; A free games hosting service who support godot web game.
+- [Godot](https://godotengine.org/) : Godot is an open-source game engine, we use it because it light and support web and have a similar syntax a python.
+- [Supabase](https://supabase.com/) : a Backend as a service who make db very simple and fast to make. That a paid service but the free tier is enough for the project.
+- [Itchio](https://itch.io/) ; A free games hosting service who support godot web game.
 
 
 ### database

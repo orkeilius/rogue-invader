@@ -1,7 +1,7 @@
 # Basic alien
-Alien extended from [abstract entity]()
+Alien extended from [abstract effect entity](<abstract effect entity.md>)
 
-He doesn't move because it's handled by [group alien]()
+He doesn't move because it's handled by [group alien](<../alien/group alien.md>)
 
 #### IA
 Its only shot when near the player on the x-axis
