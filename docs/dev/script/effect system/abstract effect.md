@@ -1,6 +1,6 @@
-# abstract effect
-the abstract effect is the core of the effect system it set the function/hook call by entity and overwrite by effect 
-for more information look at the [effect system](<effect system.md>)
+# Abstract effect
+The abstract effect is the core of the effect system, it set the function/hook call by entity and overwrite by effect.
+For more information, look at the [effect system](<effect system.md>).
 
 >##### exemple:
 >```gdscript
@@ -10,48 +10,48 @@ for more information look at the [effect system](<effect system.md>)
 >	bullet.global_position = entity.global_position
 >	entity.find_parent("gameInfo").add_child(bullet)
 >```
->this code make the entity shoot on the side see the hook list for more information
+>This code make the entity shoot on the side see the hook list below for more information.
 
-also user effect have a name variable (not declared in abstract classe because you can't overwrite variable)
+Also, user effect have a name variable (not declared in abstract class because you can't overwrite variable).
 
-## list of hook
+## List of hook
 
 ### applyInit()
-call when the effect is initialised
+Call when the effect is initialized.
 
 ### applyBallEffect():
 > **argument :** bullet : bullet object
 
-call to add effect to bullet before shoot
+Call to add effect to bullet before shoot.
 ```gdscript
 # MorePierce.gd
 func applyBallEffect(bullet:Bullet):
 	bullet.pierce += level * 2
 ```	
 ### onShoot() :
-call when shooting
+Call when shooting.
 
 ### moveBullet():
 > **argument :** speed : float | bullet : bullet object
 
-call to handle bullet movement
+Call to handle bullet movement.
 ```gdscript
 # MoveNormal.gd
 func moveBullet(speed:float,bullet:Bullet):
 	bullet.position += Vector2.UP.rotated(bullet.rotation) * speed
 ```
 
-### onBulletCollide
+### onBulletCollide()
 > **argument :** bullet:Bullet | colider:Node2D
 
-call when bullet touche something
+Call when bullet touch something.
 
 
-### onBulletDied
+### onBulletDied()
 > **argument :** bullet:Bullet
 
-call when bullet is destroy
-you can use `bullet.doNotFree = true` to cancel the destruction (freeing in godot) of the bullet
+Call when bullet is destroyed.
+You can use `bullet.doNotFree = true` to cancel the destruction (freeing in godot) of the bullet.
 
 ```gdscript
 # MissileBullet.gd

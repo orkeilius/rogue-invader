@@ -1,4 +1,4 @@
-# effect menu
-this menu choose element from list of givable item of [gamedata](../other/gameData.md)
+# Effect menu
+This menu chooses an element from list of givable item of [gamedata](../other/gameData.md).
 
-When choose it add the effet to the player and remove it from the list for the next level
+When the effect is chosen, he adds the effect to the player and remove it from the list for the next level

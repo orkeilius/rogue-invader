@@ -1,13 +1,13 @@
-# bullet
-the bullet/projectile heavily rely on effect to work (for movement by exemple).
+# Bullet
+The bullet/projectile heavily rely on effect to work (for movement by example).
 
-it get it effect in the [generateBullet() of the abtract effect entity](<abtract effect entity.md>) and use bullet specific hook (see [abstract effect](<../effect system/abstract effect.md>))
+It gets it effect in the [generateBullet() of the abstract effect entity](<abstract effect entity.md>) and use bullet specific hook (see [abstract effect](<../effect system/abstract effect.md>)).
 
 
 
 ### collision
-the `origin` variable avoid to it emiter entity by cheking if the collider group is the same as `origin`
+The `origin` variable avoid hitting the emitter entity by checking if the collider group is the same as `origin`.
 
-it handle the collision with alien to avoid un sync data (it remove hp corresponding to bullet pierce and vise-versa)
+It handles the collision with alien to avoid un-sync data (it removes hp corresponding to bullet pierce and vice versa).
 
-when a the `deleteBullet()` is call, effect can negate it by setting `doNotFree`  to true
+When an `deleteBullet()` is called, effect can negate it by setting `doNotFree`  to true.

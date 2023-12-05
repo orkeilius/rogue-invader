@@ -1,27 +1,27 @@
-# how effect work
-## what is an effect
-an effect is a godot script who is call to apply different modification (exemple : change stat, move bullet or shoot in different angle)
+# How effect work
+## What is an effect
+An effect is a godot script who is call to apply different modification (example : change stat, move bullet or shoot in different angle).
 
-## how the effect system work
+## How the effect system work
 ![](../../asset/effect_system.png)
 
-0. the effect is set in the entity or listed in the list of givable item
-1. the effect is given to an entity in the entity code or in the effect menu
-2. *some* effect apply itself the bullet (ex: effect to move the bullet)
-3. *some* effect also apply it self to the enemy (ex : burning effect)
+0. The effect is set in the entity or listed in the list of givable item.
+1. The effect is given to an entity in the entity code or in the effect menu.
+2. *Some* effects apply itself the bullet (ex: effect to move the bullet).
+3. *Some* effect also applies itself to the enemy (ex : burning effect).
 
 
-## make effect
+## Make effect
 
-there is the minimal code of an effect
+There is the minimal code of an effect.
 ```gdscript
 class_name effectName extends AbstractEffect
 
 const name = "effect name"
 ```
-from here you can add various function 
+From here you can add various function.
 
-##### exemple:
+##### Example :
 ```gdscript
 func onShoot(entity:Node2D):
 	var bullet = entity.generateBullet()
@@ -29,59 +29,58 @@ func onShoot(entity:Node2D):
 	bullet.global_position = entity.global_position
 	entity.find_parent("gameInfo").add_child(bullet)
 ```
-this code make the entity shoot on the side see the function list for more information
+This code make the entity shoot on the side, see the function list for more information.
 
-### add you effect to the game
-if the effect is for the player add the class in `listOfGivableItem.gd`
+### Add your effect to the game
+If the effect is for the player, to add the class in `listOfGivableItem.gd`.
 
-if it used in a other way use the `addEffets()` of the `AbstractEffectEntity`
+If it used in another way, use the `addEffets()` of the `AbstractEffectEntity`.
 
-## helper methods
-these fucntion can't help you while making effect :
+## Helper methods
+These function can't help you while making effect :
 ### entity.generateBullet()
 > **return :** Bullet object
  
-generate a bullet with effect, use this to shot it
+Generate a bullet with effect, use this to shot it.
 
-## effect methods
-effect that can be overwrite start with "apply"
+## Effect methods
 
 ### applyInit()
-call when the effect is initialised
+Call when the effect is initialized.
 
 ### applyBallEffect():
 > **argument :** bullet : bullet object
 
-call to add effect to bullet before shoot
+Call to add effect to bullet before shoot.
 ```gdscript
 # MorePierce.gd
 func applyBallEffect(bullet:Bullet):
 	bullet.pierce += level * 2
 ```	
 ### onShoot() :
-call when shooting
+Call when shooting.
 
 ### moveBullet():
 > **argument :** speed : float | bullet : bullet object
 
-call to handle bullet movement
+Call to handle bullet movement.
 ```gdscript
 # MoveNormal.gd
 func moveBullet(speed:float,bullet:Bullet):
 	bullet.position += Vector2.UP.rotated(bullet.rotation) * speed
 ```
 
-### onBulletCollide
+### onBulletCollide()
 > **argument :** bullet:Bullet | colider:Node2D
 
-call when bullet touche something
+call when bullet touch something
 
 
-### onBulletDied
+### onBulletDied()
 > **argument :** bullet:Bullet
 
-call when bullet is destroy
-you can use `bullet.doNotFree = true` to cancel the destruction (freeing in godot) of the bullet
+Call when bullet is destroyed.
+You can use `bullet.doNotFree = true` to cancel the destruction (freeing in godot) of the bullet.
 
 ```gdscript
 # MissileBullet.gd

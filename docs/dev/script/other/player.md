@@ -1,6 +1,6 @@
-# player
-it extend [abstract effect entity](<abtract effect entity.md>)
+# Player
+It extends [abstract effect entity](<abstract effect entity.md>).
 
-it move using key and `callShoot()` of to shoot
+It moves using key and `callShoot()` of to shoot.
 
-it have a basic collision and call [`gameOver()` of gamemode](gamemode.md) when hit 3 time
+It has a basic collision and call [`gameOver()` of gamemode](gamemode.md) when hit 3 time.

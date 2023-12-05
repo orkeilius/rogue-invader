@@ -1,9 +1,9 @@
-# effect system
-the effect system is one of the most important system of the project  
-it use to handle every shoot realated code and effect obtainable by player  
+# Effect system
+The effect system is one of the most important system of the project.  
+It used to handle every shoot related code and effect obtainable by player. 
 
 ## how effect work
-the effect is made a list of functions use as hook call by other entity [for more information look at abstract effect](<abstract effect.md>)
+The effect is made a list of functions use as hook call by other entity [for more information, look at abstract effect](<abstract effect.md>).
 
 >#### Exemple :
 > ```gdscript
@@ -21,25 +21,25 @@ the effect is made a list of functions use as hook call by other entity [for mor
 >```
 > the moveNormal effect move the bullet forward  
 
-this way a script can be easely replace/Added that will change this behavior
+This way, a script can be easily replaced/Added and will change this behavior.
 
-## effect entity
+## Effect entity
 effect are use by two class : abstract entity and bullet
-### [abstract entity](<abstract effect.md>) 
-this an absctrac class use by [alien]() and [player]() and offer some utils function and variable to be modified more easily by effect
+### [Abstract entity](<abstract effect.md>) 
+This is an abstract class use by [alien]() and [player]() and offer some utils function and variable to be modified more easily by effect.
 ### [bullet]()
-the bullet is his own effect hook (like moveBullet())
+The bullet is his own effects hook (like moveBullet()).
 
 ## effect lifecycle
 ![](../../../asset/effect_system.png)
 
-0. the effect is set in the entity or listed in the list of givable item and added in the [effect menu]()
-1. the effect is given to an entity in the entity code or in the effect menu
-2. *some* effect apply itself the bullet (ex: effect to move the bullet)
-3. *some* effect also apply it self to the enemy (ex : burning effect)
+0. The effect is set in the entity or listed in the list of givable item and added in the [effect menu]().
+1. The effect is given to an entity in the entity code or in the effect menu.
+2. *Some* effects apply itself the bullet (ex: effect to move the bullet).
+3. *Some* effect also applies itself to the enemy (ex : burning effect).
 
 ### user vs system effect
-if you look at the code structure you can see three folder in the effect folders on is for object load by effect and other are for 2 type of script
-- **player effect** : Effect give by the player. There listed in the `listOfGivableItem.gd` class so the game know with effect to choose from
+If you look at the code structure you can see three folders in the effect folders; one is for object load by effect and the others are for 2 type of script.
+- **player effect** : Effect give by the player. They're listed in the `listOfGivableItem.gd` class so the game know with effect to choose from.
 
-- **system effect** : default effect set using the `addEffets()` in the ready() of an extended [AbstractEffectEntity]()
+- **system effect** : Default effect set using the `addEffets()` in the ready() of an extended [AbstractEffectEntity]()

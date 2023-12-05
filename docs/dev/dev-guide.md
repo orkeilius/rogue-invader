@@ -1,19 +1,19 @@
-#  developper docs
+# Developer docs
 
 
-## intro
-this docs explain complex mecanics of the project  
-that won't explain stuff like scene (ex: menu script/scene)  
+## Intro
+These docs explain complex mechanics of the project.  
+That won't explain stuff like scene (ex: menu script/scene).
 
-### technologie  
+### technologies  
 
-- [**godot**](https://godotengine.org/) : godot is a open-source game engine, we use it because it ligth and support web and have a similiar syntax a python
-- [**supabase**](https://supabase.com/) : a Backend as a service qui permet de rapidement crée une base de données avec de la sécurite, le service est payant mais le tiers-gratuit est plus que suffisant
-- [**itchio**](https://itch.io/) ; un site d'hébergemnt gratuit de jeu qui propose un support simple de godot
+- [**Godot**](https://godotengine.org/) : Godot is an open-source game engine, we use it because it light and support web and have a similar syntax a python.
+- [**Supabase**](https://supabase.com/) : a Backend as a service who make db very simple and fast to make. That a paid service but the free tier is enough for the project.
+- [**Itchio**](https://itch.io/) ; A free games hosting service who support godot web game.
 
 
 ### database
-the database is just one table :
+The database is just one table with read and insert only policy :
 
 ```sql
 create table
@@ -26,13 +26,12 @@ create table
     constraint highscore_id_key unique (id)
   ) tablespace pg_default;
 ```
-with read and insert only policy
 
 
-### general project structure
-the project is organise like this:
+### General project structure
+The project is organized like this:
 
-- **addons** *addons folder for the supabse warpper*
+- **addons** *addons folder for the Supabse wrapper*
 - **docs** *docs for user and dev*
 - **object** *object (scene use as object for other scene )*
 - **scene** *scene*
@@ -43,27 +42,27 @@ the project is organise like this:
     - **systemEffect** *effect use for alien or default player*
     - **userEffect** *effect that can be give to player*
   - **gamemode** *gamemode related code*
-  - **UI** *menu and hud related code*
+  - **UI** *menu and HUD related code*
   - **wall** *wall related code*
 - **sprite** *image for the game*
 - **UI** *ui related stuff (font,logo,button ,...)*  
   
-## code structure
-since godot use a object system with script attach, we will list script group by related object/scene
-#### alien
+## Code structure
+Since godot use an object system with script attach, we will list script group by related object/scene.
+#### Alien
 - [alien group](<script/alien/group alien.md>)
 - [basic alien](<script/alien/base alien.md>)
 - [alien generator](<script/alien/alien generator.md>)
 - [boss alien](<script/alien/boss alien.md>)
 
-#### effect system
+#### Effect system
 - [*how the effect system work*](<script/effect system/effect system.md>)
 - [abstract effect](<script/effect system/abstract effect.md>)
 - [list of givable item](<script/effect system/list of givable item.md>)
 
 
 
-#### other game script
+#### Other game script
 - [abstract effect entity](<script/other/abtract effect entity.md>)
 - [autoload game data](script/other/gameData.md)
 - [bullet](script/other/bullet.md)
@@ -72,5 +71,5 @@ since godot use a object system with script attach, we will list script group by
 - [wall](script/other/wall.md)
 
 
-#### menu related
+#### Menu related
 - [effect menu](<script/menu/effect menu.md>)

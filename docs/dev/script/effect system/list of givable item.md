@@ -1,5 +1,4 @@
-# list of givable item
+# List of givable item
+A list use to store givable item.
 
-a list use to store givable item,
-
-the [gameData]() is copy it at the start of every game and it use by the [effect list]() how choose three in the list and remove the one who is selected
+The [gameData]() make a copy of it at the start of every game. And it uses by the [effect list]() how choose three in the list and remove the one who is selected.

@@ -1,10 +1,10 @@
-# alien generator
+# Alien generator
 > this part of the code is unused 
 > (its used but currently, it just an interface that just give level to alien generator)
 
-It intend to generate random alien type and give its level
+he intends to generate random aliens type and give his level base on the global level
 
-you can easely add new alien by adding a item to the enemie data variable
+you can easily add a new alien by adding an item to the enemy's data variable
 > exemple
 > ```gdscript
 >const enemieData =[ 
