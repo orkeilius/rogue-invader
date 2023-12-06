@@ -63,7 +63,7 @@ Since godot use an object system with script attach, we will list script group b
 
 
 #### Other game script
-- [abstract effect entity](<script/other/abtract effect entity.md>)
+- [abstract effect entity](<script/other/abstract effect entity.md>)
 - [autoload game data](script/other/gameData.md)
 - [bullet](script/other/bullet.md)
 - [gamemode classic](script/other/gamemode.md)
