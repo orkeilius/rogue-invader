@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://c4ppla5gm0u4e"]
 
 [ext_resource type="TileSet" uid="uid://bumob42f7gddr" path="res://sprite/wall/wallClasic.tres" id="1_j26wx"]
-[ext_resource type="Script" path="res://script/wall/wall.gd" id="2_hqxa0"]
+[ext_resource type="Script" path="res://script/wall.gd" id="2_hqxa0"]
 
 [node name="wall" type="TileMap" groups=["wall"]]
 scale = Vector2(4, 4)

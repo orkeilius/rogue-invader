@@ -16,10 +16,6 @@ func applyInit():
     ## call when initated
     pass
 
-func applyLevelUp(addedLevel : int):
-    ## call when level is updated
-    pass 
-
 func applyBallEffect(bullet:Bullet):
     ## call to add effect to bullet before shoot
     pass
