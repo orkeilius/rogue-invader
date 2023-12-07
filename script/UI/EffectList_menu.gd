@@ -12,6 +12,8 @@ func _ready():
 		var playerAsset = load("res://object/player/PlayerClassic.tscn")
 		var playerObject = playerAsset.instantiate()
 		globalData.player = playerObject
+	elif len(effectList) < 3 :
+		get_tree().change_scene_to_file("res://scene/gameMode/gamemodeRogue.tscn")
 
 	for i in range(3):
 		buttonList.append(effectList.pop_at(randi_range(0,len(effectList) -1)))
