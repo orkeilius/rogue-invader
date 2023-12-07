@@ -22,11 +22,14 @@ func _ready():
 	find_child("effect3").text = buttonList[2].name
 	find_child("effect1").grab_focus()
 		
+func _process(delta):
+	if Input.is_action_pressed("escape"):
+		get_tree().change_scene_to_file("res://scene/UI/main_menu.tscn")
+
 func choose(value:int):
 	globalData.givableItem.remove_at(globalData.givableItem.find(buttonList[value]))
 	globalData.player.addEffects([buttonList[value]])
 	get_tree().change_scene_to_file("res://scene/gameMode/gamemodeRogue.tscn")
-
 
 func Effect1():
 	choose(0)
