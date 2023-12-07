@@ -8,7 +8,7 @@ That won't explain stuff like scene (ex: menu script/scene).
 ### technologies  
 
 - [Godot](https://godotengine.org/) : Godot is an open-source game engine, we use it because it light and support web and have a similar syntax a python.
-- [Supabase](https://supabase.com/) : a Backend as a service who make db very simple and fast to make. That a paid service but the free tier is enough for the project.
+- [Supabase](https://supabase.com/) : A Backend as a service who make db very simple and fast to make. That a paid service but the free tier is enough for the project.
 - [Itchio](https://itch.io/) ; A free games hosting service who support godot web game.
 
 
@@ -66,7 +66,7 @@ Since godot use an object system with script attach, we will list script group b
 - [abstract effect entity](<script/other/abstract effect entity.md>)
 - [autoload game data](script/other/gameData.md)
 - [bullet](script/other/bullet.md)
-- [gamemode classic](script/other/gamemode.md)
+- [gamemodes](script/other/gamemode.md)
 - [player](script/other/player.md)
 - [wall](script/other/wall.md)
 
