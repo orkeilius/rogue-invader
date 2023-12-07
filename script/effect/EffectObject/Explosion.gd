@@ -9,7 +9,7 @@ func _ready():
 
 func _on_body_entered(body):
 	if body.is_in_group("wall"):
-		body.collide(global_position,true,20)
+		body.collide(global_position,20,"wall",true)
 
 
 func _on_area_entered(target):
