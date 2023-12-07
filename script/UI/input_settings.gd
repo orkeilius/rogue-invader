@@ -9,10 +9,10 @@ var action_to_remap = null
 var remapping_button = null
 
 var input_actions = {
-	"move_up": "Move up",
-	"move_left": "Move left",
-	"move_down": "Move down",
-	"move_right": "Move right",
+	"up": "Move up",
+	"left": "Move left",
+	"down": "Move down",
+	"right": "Move right",
 	"shoot": "Shoot"
 }
 
@@ -36,8 +36,12 @@ func _create_action_list():
 		var input_label = button.find_child("LabelInput")
 		
 		action_label.text = input_actions[action]
-		
-		var events = InputMap.action_get_events(action)
+		var events
+		if action == "shoot":
+			events = InputMap.action_get_events(action)
+		else:
+			events = InputMap.action_get_events("move_"+action)
+
 		if events.size() > 0:
 			input_label.text = events[0].as_text().trim_suffix(" (Physical)")
 		else:
@@ -64,15 +68,21 @@ func _input(event):
 			if event is InputEventMouseButton && event.double_click:
 				event.double_click = false
 			
-			InputMap.action_erase_events(action_to_remap)
-			InputMap.action_add_event(action_to_remap, event)
-			_upgrade_action_list(remapping_button, event)
-			
+
+			remap_action("move_" + action_to_remap,event,remapping_button)
+			remap_action("ui_" + action_to_remap,event,remapping_button)
+			remap_action("ui_text_caret_" + action_to_remap,event,remapping_button)
+
 			is_remapping = false
 			action_to_remap = null
 			remapping_button = null
 			
 			accept_event()
+	
+func remap_action(action,event,button):
+	InputMap.action_erase_events(action)
+	InputMap.action_add_event(action, event)
+	_upgrade_action_list(button, event)
 
 func _upgrade_action_list(button, event):
 	button.find_child("LabelInput").text = event.as_text().trim_suffix(" (Physical)")
