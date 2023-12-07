@@ -6,7 +6,7 @@ var buttonList = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	var effectList:Array = globalData.givableItem
+	var effectList:Array = globalData.givableItem.duplicate()
 
 	if globalData.player == null:
 		var playerAsset = load("res://object/player/PlayerClassic.tscn")
@@ -14,7 +14,7 @@ func _ready():
 		globalData.player = playerObject
 	elif len(effectList) < 3 :
 		get_tree().change_scene_to_file("res://scene/gameMode/gamemodeRogue.tscn")
-
+	
 	for i in range(3):
 		buttonList.append(effectList.pop_at(randi_range(0,len(effectList) -1)))
 	find_child("effect1").text = buttonList[0].name
