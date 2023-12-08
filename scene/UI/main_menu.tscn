@@ -40,7 +40,6 @@ grow_vertical = 2
 
 [node name="PlayButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-focus_neighbor_top = NodePath("../QuitButton")
 theme = ExtResource("7_ygycs")
 text = "Play"
 
@@ -60,12 +59,6 @@ layout_mode = 2
 theme = ExtResource("7_ygycs")
 text = "Options"
 
-[node name="QuitButton" type="Button" parent="VBoxContainer"]
-layout_mode = 2
-focus_neighbor_bottom = NodePath("../PlayButton")
-theme = ExtResource("7_ygycs")
-text = "Quit"
-
 [node name="Title2" type="Sprite2D" parent="."]
 position = Vector2(299, 200)
 texture = ExtResource("5_ut307")
@@ -74,4 +67,3 @@ texture = ExtResource("5_ut307")
 [connection signal="pressed" from="VBoxContainer/SpaceInvadersButton" to="." method="_on_space_invaders_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/Highscore" to="." method="_on_highscore_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/Options" to="." method="_on_options_pressed"]
-[connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

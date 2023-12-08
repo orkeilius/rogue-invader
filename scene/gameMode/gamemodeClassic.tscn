@@ -83,6 +83,7 @@ shape = SubResource("SegmentShape2D_pnu7e")
 
 [node name="greenLine" parent="gameBorder" instance=ExtResource("7_scqhl")]
 position = Vector2(0, 650)
+rendering_quadrant_size = 1
 
 [node name="bossBase" parent="." instance=ExtResource("8_n336v")]
 position = Vector2(-32, 90)
