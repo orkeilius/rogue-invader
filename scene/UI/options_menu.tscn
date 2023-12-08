@@ -37,12 +37,6 @@ offset_bottom = 53.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="DisplayButton" type="Button" parent="VBoxContainer"]
-layout_mode = 2
-focus_neighbor_top = NodePath("../BackButton")
-theme = ExtResource("4_h5md8")
-text = "Display"
-
 [node name="ControlButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("4_h5md8")
@@ -50,10 +44,8 @@ text = "Controls"
 
 [node name="BackButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-focus_neighbor_bottom = NodePath("../DisplayButton")
 theme = ExtResource("4_h5md8")
 text = "Back"
 
-[connection signal="pressed" from="VBoxContainer/DisplayButton" to="." method="_on_display_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/ControlButton" to="." method="_on_control_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/BackButton" to="." method="_on_back_button_pressed"]

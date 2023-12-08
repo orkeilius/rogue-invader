@@ -8,7 +8,7 @@ That won't explain stuff like scene (ex: menu script/scene).
 ### technologies  
 
 - [Godot](https://godotengine.org/) : Godot is an open-source game engine, we use it because it light and support web and have a similar syntax a python.
-- [Supabase](https://supabase.com/) : a Backend as a service who make db very simple and fast to make. That a paid service but the free tier is enough for the project.
+- [Supabase](https://supabase.com/) : A Backend as a service who make db very simple and fast to make. That a paid service but the free tier is enough for the project.
 - [Itchio](https://itch.io/) ; A free games hosting service who support godot web game.
 
 
@@ -50,26 +50,27 @@ The project is organized like this:
 ## Code structure
 Since godot use an object system with script attach, we will list script group by related object/scene.
 #### Alien
+- [alien generator](<script/alien/alien generator.md>)
 - [alien group](<script/alien/group alien.md>)
 - [basic alien](<script/alien/base alien.md>)
-- [alien generator](<script/alien/alien generator.md>)
 - [boss alien](<script/alien/boss alien.md>)
 
 #### Effect system
 - [*how the effect system work*](<script/effect system/effect system.md>)
 - [abstract effect](<script/effect system/abstract effect.md>)
+- [abstract effect entity](<script/other/abstract effect entity.md>)
 - [list of givable item](<script/effect system/list of givable item.md>)
 
 
 
 #### Other game script
-- [abstract effect entity](<script/other/abstract effect entity.md>)
 - [autoload game data](script/other/gameData.md)
 - [bullet](script/other/bullet.md)
-- [gamemode classic](script/other/gamemode.md)
+- [gamemodes](script/other/gamemode.md)
 - [player](script/other/player.md)
 - [wall](script/other/wall.md)
 
 
 #### Menu related
 - [effect menu](<script/menu/effect menu.md>)
+
