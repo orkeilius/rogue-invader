@@ -10,7 +10,7 @@ var enemielevel = [0]
 
 func _ready():
 	var level = get_node("/root/GameData").level 
-	var point = level * 5 + 50
+	var point = level * 20 + 40
 
 	while point > 0:
 		var val = randi_range(0,len(enemieData) -1)
