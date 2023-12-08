@@ -50,20 +50,20 @@ The project is organized like this:
 ## Code structure
 Since godot use an object system with script attach, we will list script group by related object/scene.
 #### Alien
+- [alien generator](<script/alien/alien generator.md>)
 - [alien group](<script/alien/group alien.md>)
 - [basic alien](<script/alien/base alien.md>)
-- [alien generator](<script/alien/alien generator.md>)
 - [boss alien](<script/alien/boss alien.md>)
 
 #### Effect system
 - [*how the effect system work*](<script/effect system/effect system.md>)
 - [abstract effect](<script/effect system/abstract effect.md>)
+- [abstract effect entity](<script/other/abstract effect entity.md>)
 - [list of givable item](<script/effect system/list of givable item.md>)
 
 
 
 #### Other game script
-- [abstract effect entity](<script/other/abstract effect entity.md>)
 - [autoload game data](script/other/gameData.md)
 - [bullet](script/other/bullet.md)
 - [gamemodes](script/other/gamemode.md)
@@ -73,3 +73,4 @@ Since godot use an object system with script attach, we will list script group b
 
 #### Menu related
 - [effect menu](<script/menu/effect menu.md>)
+
