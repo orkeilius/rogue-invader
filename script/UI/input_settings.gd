@@ -71,7 +71,6 @@ func _input(event):
 
 			remap_action("move_" + action_to_remap,event,remapping_button)
 			remap_action("ui_" + action_to_remap,event,remapping_button)
-			remap_action("ui_text_caret_" + action_to_remap,event,remapping_button)
 
 			is_remapping = false
 			action_to_remap = null
