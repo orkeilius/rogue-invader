@@ -1,7 +1,7 @@
 # Rogue-invaders
 Rogue-invaders is a school project recreating space-invaders with a rogue-like game mode.
 
-## Kow to play
+## how to play
 **move** : *a* and *d* / (*q* and *d* on azerty keyboard)
 **shoot / valid** : space
 
